@@ -11,8 +11,8 @@ declare(strict_types=1);
 
 return [
     'name'        => 'Asplund Eltjänst',
-    'legalName'   => null,                 // org.nr / juridiskt namn ej bekräftat
-    'orgNr'       => null,
+    'legalName'   => 'Asplund Eltjänst i Nynäshamn AB',   // bekräftat av Anton 2026-10-01
+    'orgNr'       => '559284-3410',        // bekräftat av Anton 2026-10-01
     'owner'       => 'Didrik Asplund',
     'domain'      => 'asplundeltjanst.se',
     'tagline'     => 'Behörig elektriker i Nynäshamn och på Södertörn',
@@ -46,9 +46,9 @@ return [
 
     // --- links ------------------------------------------------------------------
     'googleProfileUrl' => null,            // publik Google-profil
-    'googleReviewUrl'  => null,            // "Skriv ett omdöme"-länk
+    'googleReviewUrl'  => null,            // "Skriv ett omdöme"-länk: GBP → Få fler omdömen → kopiera länken. Visas på /omdome/ när den är ifylld
     'instagram'        => 'https://www.instagram.com/asplundeltjanst/',
-    'facebook'         => null,
+    'facebook'         => 'https://www.facebook.com/people/Asplund-Eltj%C3%A4nst/100043632067221/',
 
     // --- service area -------------------------------------------------------------
     'areaServed' => ['Nynäshamn', 'Ösmo', 'Sorunda', 'Torö', 'Stora Vika', 'Västerhaninge',

@@ -591,3 +591,4 @@ a.ccard-hi:hover { color: #fff; border-color: var(--spark); }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
+.lead + .fine { margin-top: 22px; text-align: center; }

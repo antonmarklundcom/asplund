@@ -220,15 +220,19 @@ function site_footer(): void
         <li><a href="/blogg/">Guider &amp; tips</a></li>
         <li><a href="/kontakt/">Kontakt</a></li>
         <li><a href="/boka/">Begär offert</a></li>
+        <li><a href="/omdome/">Lämna omdöme</a></li>
         <li><a href="/integritetspolicy/">Integritetspolicy</a></li>
 <?php if ($s['instagram']): ?>
         <li><a href="<?= e($s['instagram']) ?>" rel="noopener" target="_blank">Instagram</a></li>
+<?php endif; ?>
+<?php if ($s['facebook']): ?>
+        <li><a href="<?= e($s['facebook']) ?>" rel="noopener" target="_blank">Facebook</a></li>
 <?php endif; ?>
       </ul>
     </div>
   </div>
   <div class="wrap ftr-bottom">
-    <p>© <?= date('Y') ?> <?= e($s['name']) ?><?= $s['orgNr'] ? ' · Org.nr ' . e($s['orgNr']) : '' ?> · Behörig elektriker i Nynäshamn och på Södertörn</p>
+    <p>© <?= date('Y') ?> <?= e($s['legalName'] ?? $s['name']) ?><?= $s['orgNr'] ? ' · Org.nr ' . e($s['orgNr']) : '' ?> · Behörig elektriker i Nynäshamn och på Södertörn</p>
     <a href="#top" class="ftr-top">Till toppen ↑</a>
   </div>
 </footer>
