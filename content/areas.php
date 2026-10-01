@@ -86,7 +86,7 @@ return [
         ['q' => 'Kan ni installera laddbox i en radhusförening i Tyresö?', 'a' => 'Ja, både för enskilda radhus och som gemensam lösning för föreningen.'],
         ['q' => 'Får jag ROT-avdrag?', 'a' => 'Ja, vi drar ROT eller grönt avdrag direkt på fakturan när arbetet görs i din bostad.'],
     ],
-    'nearby' => ['/elektriker-haninge/' => 'Haninge', '/elektriker-huddinge/' => 'Huddinge', '/' => 'Nynäshamn'],
+    'nearby' => ['/elektriker-haninge/' => 'Haninge', '/elektriker-nacka/' => 'Nacka', '/elektriker-huddinge/' => 'Huddinge'],
 ],
 
 'huddinge' => [
@@ -124,7 +124,7 @@ return [
         ['q' => 'Gör ni el i samband med badrumsrenovering?', 'a' => 'Ja, vi samordnar med plattsättare och rörmokare. Läs mer om [el i badrum](/badrum/).'],
         ['q' => 'Hur bokar jag?', 'a' => 'Ring oss eller skicka en förfrågan via formuläret, så återkommer vi med pris och tid.'],
     ],
-    'nearby' => ['/elektriker-haninge/' => 'Haninge', '/elektriker-tyreso/' => 'Tyresö', '/elektriker-sodertalje/' => 'Södertälje'],
+    'nearby' => ['/elektriker-haninge/' => 'Haninge', '/elektriker-stockholm/' => 'Stockholm', '/elektriker-sodertalje/' => 'Södertälje'],
 ],
 
 'sodertalje' => [
@@ -163,6 +163,90 @@ return [
         ['q' => 'Får jag avdrag för solceller och laddbox?', 'a' => 'Ja, grönt avdrag: 15 % för solceller och 50 % för laddbox och batteri, direkt på fakturan.'],
     ],
     'nearby' => ['/elektriker-huddinge/' => 'Huddinge', '/elektriker-haninge/' => 'Haninge', '/' => 'Nynäshamn'],
+],
+
+'nacka' => [
+    'path'        => '/elektriker-nacka/',
+    'name'        => 'Nacka',
+    'nav'         => 'Nacka & Saltsjöbaden',
+    'region'      => 'Nacka',
+    'title'       => 'Elektriker i Nacka – Asplund Eltjänst',
+    'description' => 'Behörig elektriker i Nacka, Boo, Saltsjöbaden och Älta. Laddbox, solceller, elcentral och belysning för villa och BRF – fast pris och ROT-avdrag.',
+    'h1'          => 'Elektriker i Nacka',
+    'lead'        => 'Från Boo och Saltsjöbaden till Orminge, Älta och Sickla – vi tar elinstallationer i Nacka kommun, med bas i Nynäshamn och kort väg via Tyresö.',
+    'districts'   => ['Boo', 'Saltsjöbaden', 'Orminge', 'Älta', 'Fisksätra', 'Sickla', 'Björknäs', 'Duvnäs', 'Velamsund', 'Hästhagen'],
+    'sections'    => [
+        [
+            'h2' => 'Elektriker för villa, radhus och BRF i Nacka',
+            'p'  => [
+                'Nacka är en blandning av äldre villor och sommarhus i Saltsjöbaden och Duvnäs, trädgårdsstad i Björknäs och Älta, och nyare bostadsrättsområden runt Sickla och Orminge. Det ger olika behov: äldre hus behöver ofta [ny elcentral](/elcentral/) och [jordfelsbrytare](/jordfelsbrytare/), medan nyare områden efterfrågar [laddbox](/elbilsladdare/) och [smart styrning](/smarta-hem/).',
+                'Många villor i Boo och Saltsjöbaden har stora tomter där [utomhus- och trädgårdsbelysning](/tradgardsbelysning/) gör stor skillnad under mörka månader – och takytor som passar för [solceller](/solceller/).',
+            ],
+        ],
+        [
+            'h2' => 'Vanliga elarbeten i Nacka',
+            'checks' => [
+                'Laddbox vid villa, radhus och i bostadsrättsföreningars garage',
+                'Solceller och solcellsbatteri på villataket',
+                'Byte av gammal elcentral och installation av jordfelsbrytare',
+                'Fasad- och trädgårdsbelysning',
+                'Fler eluttag, spotlights och köksbelysning vid renovering',
+                'Felsökning när jordfelsbrytaren löser ut',
+            ],
+        ],
+    ],
+    'services' => ['elbilsladdare', 'solceller', 'elcentral', 'tradgardsbelysning', 'spotlights', 'felsokning'],
+    'faq'      => [
+        ['q' => 'Tar ni jobb i Nacka?', 'a' => 'Ja, vi tar uppdrag i Nacka kommun. Vi utgår från Nynäshamn, så ring eller skicka en förfrågan så planerar vi när vi kan komma.'],
+        ['q' => 'Tar ni jobb åt bostadsrättsföreningar i Nacka?', 'a' => 'Ja, till exempel laddplatser i garage, belysning i gemensamma utrymmen och elkontroller.'],
+        ['q' => 'Får jag avdrag för laddbox och solceller i Nacka?', 'a' => 'Ja, grönt avdrag: 50 % för laddbox och batteri och 15 % för solceller, direkt på fakturan. ROT-avdrag på 30 % gäller för arbetskostnaden vid övrigt elarbete.'],
+    ],
+    'nearby' => ['/elektriker-tyreso/' => 'Tyresö', '/elektriker-stockholm/' => 'Stockholm', '/elektriker-haninge/' => 'Haninge'],
+],
+
+'stockholm' => [
+    'path'        => '/elektriker-stockholm/',
+    'name'        => 'Stockholm',
+    'nav'         => 'Södra Stockholm',
+    'region'      => 'Stockholm',
+    'title'       => 'Elektriker i södra Stockholm – Asplund Eltjänst',
+    'description' => 'Behörig elektriker i södra Stockholm: Älvsjö, Farsta, Hägersten och Södermalm. Laddbox, elcentral, belysning och felsökning – fast pris och ROT.',
+    'h1'          => 'Elektriker i södra Stockholm',
+    'lead'        => 'Vi är ett litet elföretag i Nynäshamn och tar uppdrag i södra Stockholm – villor, radhus och bostadsrättsföreningar i söderort längs Nynäsvägen.',
+    'districts'   => ['Älvsjö', 'Farsta', 'Hägersten', 'Årsta', 'Hammarby Sjöstad', 'Södermalm', 'Hökarängen', 'Bandhagen', 'Enskede', 'Skarpnäck'],
+    'sections'    => [
+        [
+            'h2' => 'Elektriker i söderort – utan storföretagets overhead',
+            'p'  => [
+                'Stockholm har många elfirmor, men många av dem är stora bolag med växel och kö. Hos oss pratar du direkt med elektrikern som gör jobbet, och du får ett fast pris innan vi börjar. Vi utgår från Nynäshamn och tar uppdrag i södra Stockholm när jobbet passar – ring så får du besked direkt.',
+                'I söderort finns allt från äldre villor i Enskede och Älvsjö med proppskåp som är dags att byta mot [modern elcentral](/elcentral/), till bostadsrättsföreningar i Hammarby Sjöstad och Årsta som vill ha [laddplatser i garaget](/elbilsladdare/).',
+            ],
+        ],
+        [
+            'h2' => 'Vanliga elarbeten i södra Stockholm',
+            'checks' => [
+                'Laddbox och laddplatser för villa och bostadsrättsförening',
+                'Byte från proppskåp till elcentral med jordfelsbrytare',
+                'Elbesiktning och elkontroll inför köp eller renovering',
+                'Fler uttag, spotlights och belysning vid lägenhets- och badrumsrenovering',
+                'Felsökning när säkringar går eller lampor blinkar',
+                'Solceller på villa- och radhustak',
+            ],
+        ],
+        [
+            'h2' => 'Så går det till',
+            'p'  => [
+                'Du beskriver jobbet i formuläret eller ringer. Vi stämmer av dag och tid, gör jobbet och du får en tydlig faktura med ROT- eller grönt avdrag redan avdraget. Små jobb försöker vi samla med andra uppdrag i närheten för att hålla nere restiden.',
+            ],
+        ],
+    ],
+    'services' => ['elbilsladdare', 'elcentral', 'elbesiktning', 'felsokning', 'eluttag', 'spotlights'],
+    'faq'      => [
+        ['q' => 'Tar ni jobb i Stockholm?', 'a' => 'Ja, vi tar uppdrag i södra Stockholm och söderort. Vi utgår från Nynäshamn, så för mindre jobb samlar vi gärna flera uppdrag samma dag – ring så hittar vi en lösning.'],
+        ['q' => 'Tar ni jobb åt bostadsrättsföreningar i Stockholm?', 'a' => 'Ja, till exempel laddplatser i garage, belysning i gemensamma utrymmen och elkontroller.'],
+        ['q' => 'Vilka avdrag kan jag få?', 'a' => 'ROT-avdrag på 30 % av arbetskostnaden för vanligt elarbete, och grönt avdrag för laddbox, solceller och batteri. Avdraget dras direkt på fakturan.'],
+    ],
+    'nearby' => ['/elektriker-nacka/' => 'Nacka', '/elektriker-huddinge/' => 'Huddinge', '/elektriker-haninge/' => 'Haninge'],
 ],
 
 ];

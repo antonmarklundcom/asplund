@@ -15,6 +15,7 @@ Art direction: realistic, natural-light photography of Swedish homes (Stockholm 
 | exists | `/assets/img/tjanster/elcentral-automatsakringar.webp` | Ny elcentral med automatsäkringar och jordfelsbrytare i en villa | service /elcentral/ (side panel + og:image), 4:3, min 1200x900 |
 | exists | `/assets/img/tjanster/jordfelsbrytare-elcentral.webp` | Jordfelsbrytare monterad i en elcentral | service /jordfelsbrytare/ (side panel + og:image), 4:3, min 1200x900 |
 | exists | `/assets/img/tjanster/felsokning-elfel.webp` | Elektriker mäter med instrument vid en elcentral under felsökning | service /felsokning/ (side panel + og:image), 4:3, min 1200x900 |
+| exists | `/assets/img/tjanster/eljour-akut-elfel.webp` | Elektriker med ficklampa vid en elcentral en kväll vid akut elfel | service /eljour/ (side panel + og:image), 4:3, min 1200x900 |
 | exists | `/assets/img/tjanster/eluttag-vagguttag.webp` | Nytt dubbelt vägguttag monterat i ett vardagsrum | service /eluttag/ (side panel + og:image), 4:3, min 1200x900 |
 | exists | `/assets/img/tjanster/dra-el-renovering.webp` | Elektriker drar ny kabel i en vägg under renovering | service /dra-el/ (side panel + og:image), 4:3, min 1200x900 |
 | exists | `/assets/img/tjanster/elbesiktning-elkontroll.webp` | Elektriker kontrollerar en elcentral med mätinstrument | service /elbesiktning/ (side panel + og:image), 4:3, min 1200x900 |

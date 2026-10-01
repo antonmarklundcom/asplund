@@ -31,7 +31,7 @@ page_start([
   <div class="wrap shero-grid">
     <div class="shero-copy">
       <?= crumbs_html() ?>
-      <p class="eyebrow eyebrow-ico"><?= icon('pin', 18) ?>Södertörn</p>
+      <p class="eyebrow eyebrow-ico"><?= icon('pin', 18) ?><?= e($a['region'] ?? 'Södertörn') ?></p>
       <h1><?= e($a['h1']) ?></h1>
       <p class="shero-lead"><?= rich($a['lead']) ?></p>
       <div class="hero-ctas">

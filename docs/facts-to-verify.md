@@ -18,6 +18,8 @@ on the staging site and need a yes/no from Didrik:
 | 10 | Works in Haninge, Tyresö, Huddinge, Södertälje, skärgården | area pages | old site "Södertörn" | Confirm each; drop a page he won't drive to |
 | 11 | Elbesiktning / elkontroll with protocol | /elbesiktning/ | assumption | Confirm he offers it |
 | 12 | Instagram link | footer, schema sameAs | old website | Confirm active |
+| 13 | Akuta elfel / eljour: "ring så får du besked om när vi kan komma", arbetar mån–lör 08–20, felsökning på löpande räkning | /eljour/ | assumption from the felsökning page | Confirm he takes acute call-outs, and whether any out-of-hours jour exists (page claims none). If not: drop /eljour/ or reword |
+| 14 | Works in Nacka and södra Stockholm (söderort) | /elektriker-nacka/, /elektriker-stockholm/, home, schema areaServed | Anton asked for these pages (SEO) | Confirm he drives there; drop the page(s) if not |
 
 Missing (component hidden until filled in `content/site.php`):
 org.nr + juridiskt namn, Elsäkerhetsverket registration, Google Business Profile
