@@ -34,7 +34,7 @@ page_start([
 <?php else: ?>
       <p class="pill"><span class="pulse" aria-hidden="true"></span>Tar emot nya uppdrag</p>
 <?php endif; ?>
-      <h1><?= e($p['h1']) ?></h1>
+      <h1><?= heading_text($p['h1']) ?></h1>
       <p class="hero-lead"><?= rich($p['lead']) ?></p>
       <div class="hero-ctas">
         <a class="btn btn-spark btn-lg" href="<?= e(tel_href()) ?>" data-ev="phone_click"><?= icon('phone', 20) ?> Ring <?= e($s['phone']) ?></a>

@@ -104,7 +104,7 @@ function blocks(array $sections): string
     $out = '';
     foreach ($sections as $sec) {
         $id   = $sec['id'] ?? slugify($sec['h2']);
-        $out .= '<section class="prose-sec" id="' . e($id) . '"><h2>' . e($sec['h2']) . '</h2>';
+        $out .= '<section class="prose-sec" id="' . e($id) . '"><h2>' . heading_text($sec['h2']) . '</h2>';
         foreach ($sec['p'] ?? [] as $p) {
             $out .= '<p>' . rich($p) . '</p>';
         }
@@ -179,7 +179,7 @@ function deduction_box(string $type): string
     $d = $all[$type];
 
     return '<aside class="deduct"><div class="deduct-pct"><b>' . (int) $d['percent'] . '&nbsp;%</b><span>' . e($d['label']) . '</span></div>'
-         . '<div class="deduct-txt"><p>' . e($d['text']) . '</p><p class="deduct-small">Gäller ' . e($d['base']) . ', ' . e($d['cap'])
+         . '<div class="deduct-txt"><p>' . nb(e($d['text'])) . '</p><p class="deduct-small">Gäller ' . nb(e($d['base'])) . ', ' . nb(e($d['cap']))
          . '. Regler enligt Skatteverket 2026. <a href="/priser/#avdrag">Så fungerar avdragen</a></p></div></aside>';
 }
 
@@ -194,7 +194,7 @@ function service_cards(array $slugs, string $class = ''): string
             continue;
         }
         $out .= '<li class="card"><a href="' . e($s['path']) . '"><span class="card-ico">' . icon($s['icon'], 24) . '</span>'
-              . '<span class="card-t">' . e($s['nav']) . '</span><span class="card-d">' . e($s['card']) . '</span>'
+              . '<span class="card-t">' . e($s['nav']) . '</span><span class="card-d">' . nb(e($s['card'])) . '</span>'
               . '<span class="card-more">Läs mer ' . icon('arrow', 16) . '</span></a></li>';
     }
 
@@ -271,5 +271,5 @@ function cta_band(string $title = 'Behöver du en elektriker?', string $text = '
 function page_hero(string $eyebrow, string $h1, string $lead): string
 {
     return '<section class="phero"><div class="wrap">' . crumbs_html()
-         . '<p class="eyebrow">' . e($eyebrow) . '</p><h1>' . e($h1) . '</h1><p class="phero-lead">' . rich($lead) . '</p></div></section>';
+         . '<p class="eyebrow">' . e($eyebrow) . '</p><h1>' . heading_text($h1) . '</h1><p class="phero-lead">' . rich($lead) . '</p></div></section>';
 }

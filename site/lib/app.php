@@ -148,12 +148,32 @@ function e($value): string
 }
 
 /**
+ * Typography for already-escaped HTML text: keeps "50 000 kr", "30 %" and
+ * "070-960 20 71"-style figures on one line (non-breaking spaces).
+ */
+function nb(string $html): string
+{
+    $html = preg_replace('/(\d) (?=(?:%|kr\b|kronor\b|kW\b|kWh\b|A\b))/u', "$1\u{00A0}", $html) ?? $html;
+
+    return preg_replace('/(?<=\d) (?=\d{3}(?!\d))/u', "\u{00A0}", $html) ?? $html;
+}
+
+/**
+ * A heading: escaped, with hyphenated compounds (luft-luft) kept together so a
+ * line never breaks inside them.
+ */
+function heading_text(string $text): string
+{
+    return preg_replace('/(?<![\p{L}\p{N}-])([\p{L}\p{N}]+(?:-[\p{L}\p{N}]+)+)(?![\p{L}\p{N}-])/u', '<span class="nb">$1</span>', e($text)) ?? e($text);
+}
+
+/**
  * Escaped text with two tiny markups for internal linking in content:
  * [label](/path/) and **bold**. Only site-relative or https links.
  */
 function rich(string $text): string
 {
-    $html = e($text);
+    $html = nb(e($text));
     $html = preg_replace_callback(
         '/\[([^\]]+)\]\(((?:\/|https:\/\/)[^)\s]*)\)/',
         static function (array $m): string {
