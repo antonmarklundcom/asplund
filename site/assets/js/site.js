@@ -51,6 +51,21 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
+  /* ---- sticky sidebar taller than the viewport: stick by its bottom edge ---- */
+  var side = d.querySelector('.side');
+  if (side && hdr) {
+    var fitSide = function () {
+      side.style.top = '';
+      var top = parseFloat(getComputedStyle(side).top);
+      if (isNaN(top)) return;
+      var room = window.innerHeight - side.offsetHeight - 20;
+      if (room < top) side.style.top = room + 'px';
+    };
+    window.addEventListener('resize', fitSide);
+    window.addEventListener('load', fitSide);
+    fitSide();
+  }
+
   /* ---- attribution: first touch kept 90 days ---- */
   var KEY = 'ae_attr';
   var params = new URLSearchParams(location.search);
