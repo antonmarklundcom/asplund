@@ -1,25 +1,38 @@
 # Facts to verify with Didrik before go-live
 
 Everything the site states about the business comes from `content/site.php`.
-Unconfirmed values are `null` and their component hides. These claims ARE live
-on the staging site and need a yes/no from Didrik:
+Unconfirmed values are `null` and their component hides.
 
-| # | Claim on site | Where | Source today | Action |
-|---|---|---|---|---|
-| 1 | "Topp 3-nominerad till Årets Unga Företagare" | home hero pill, /om-oss/ | Anton's pitch, year/arrangör unknown | Confirm exact wording; set `award` to null if unsure |
-| 2 | "2000+ utförda jobb" | home stats, trust row, /om-oss/ | Anton 2026-09-09 (old site said 600+) | Confirm number |
-| 3 | Grundat 2019 | home, /om-oss/, schema foundingDate | Anton 2026-09-09 | Confirm |
-| 4 | "Behörig elektriker" / behörigt elföretag | trust row, FAQ | PLAN.md | Get Elsäkerhetsverket registration → `registration` |
-| 5 | Öppettider mån–lör 08–20 | header, footer, kontakt, schema | old website | Confirm |
-| 6 | "Vi hör av oss senast nästa arbetsdag" | /tack/ | placeholder promise | Confirm or reword `responseText` |
-| 7 | Sells + installs luft-luftvärmepump | /luftvarmepump/ | PLAN.md (Didrik wants to sell) | Confirm köldmedie-certifiering (own or partner) |
-| 8 | Solceller incl. panels on roof | /solceller/ | old website listed solceller | Confirm he mounts panels or partners |
-| 9 | El-installation for luft-vatten/berg/frånluft, poolvärmepump | /varmepump/ | assumption (standard electrician work) | Confirm |
-| 10 | Works in Haninge, Tyresö, Huddinge, Södertälje, skärgården | area pages | old site "Södertörn" | Confirm each; drop a page he won't drive to |
-| 11 | Elbesiktning / elkontroll with protocol | /elbesiktning/ | assumption | Confirm he offers it |
-| 12 | Instagram link | footer, schema sameAs | old website | Confirm active |
-| 13 | Akuta elfel / eljour: "ring så får du besked om när vi kan komma", arbetar mån–lör 08–20, felsökning på löpande räkning | /eljour/ | assumption from the felsökning page | Confirm he takes acute call-outs, and whether any out-of-hours jour exists (page claims none). If not: drop /eljour/ or reword |
-| 14 | Works in Nacka and södra Stockholm (söderort) | /elektriker-nacka/, /elektriker-stockholm/, home, schema areaServed | Anton asked for these pages (SEO) | Confirm he drives there; drop the page(s) if not |
+## Answered by Didrik 2026-10-01 (applied on the site)
+
+| Item | Answer | Applied |
+|---|---|---|
+| Award arrangör | Företagarna i Nynäshamn | award text now names Företagarna Nynäshamn. Year still unknown |
+| Grundat 2019 | Yes | confirmed |
+| Behörig / registrering | "Räcker väl med att vi är registrerade där" (Elsäkerhetsverket) | no registration number stored; "behörig" wording kept |
+| Öppettider | 07–16 | now "Mån–fre 07–16, lör–sön stängt". **Weekdays are my assumption — confirm** |
+| Svarstid | "Inom några dagar?" (unsure) | neutral "Vi hör av oss så snart vi kan" until confirmed |
+| Eljour / akuta jobb | "Ibland" (assumed to be Anton's call-out question) | /eljour/ wording is already conditional ("besked om när vi kan komma"); no night/24-7 claims. Confirm which question this answered |
+| Luftvärmepump | Återförsäljare åt Mitsubishi Electric, Toshiba, Gree; kan köpa in vilket märke som helst | brand section on /luftvarmepump/. Köldmedie-certifiering still unanswered (not claimed) |
+| Solceller | "Nej inga solceller" | **NOT yet applied — decision needed (see below)** |
+| Luft-vatten / berg / frånluft | Ja luft-vatten värmepumpar | /varmepump/ keeps luft-vatten; bergvärme/frånluft/pool not confirmed |
+| Områden | "Allt söder om stan" | area pages Haninge/Tyresö/Huddinge/Södertälje/Stockholm (södra) confirmed. **Nacka not explicitly confirmed** |
+| Elbesiktning | "Genomgång av elanläggningar, konsultation" | page reworded: genomgång + råd. No written protocol/revision claim |
+| Instagram / Facebook | Instagram asplundeltjanst; Facebook "Asplund eltjänst" | Instagram link matches. **Facebook URL needed** (not guessed) |
+
+## Still open
+
+| # | Claim on site | Where | Action |
+|---|---|---|---|
+| 1 | "2000+ utförda jobb" | home stats, trust row, /om-oss/ | Didrik: "måste kolla upp". Keep or change |
+| 2 | Award year | home pill, /om-oss/ | Add year if known |
+| 3 | Solceller / solcellsbatteri | 2 service pages + ~80 mentions | Didrik does not do solar. Remove, or keep only if he does the electrical connection |
+| 4 | Nacka | /elektriker-nacka/ | Confirm he drives there |
+| 5 | Köldmedie-certifiering (luft-luft) | /luftvarmepump/ | Own or partner? Not claimed today |
+| 6 | Bergvärme / frånluft / poolvärmepump el-installation | /varmepump/ | Confirm or trim |
+| 7 | Svarstid på förfrågan | /tack/ | Confirm real promise |
+| 8 | Facebook URL | footer, schema sameAs | Get link |
+| 9 | Öppettider veckodagar | everywhere | Confirm mån–fre |
 
 Missing (component hidden until filled in `content/site.php`):
 org.nr + juridiskt namn, Elsäkerhetsverket registration, Google Business Profile
