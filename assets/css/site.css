@@ -592,3 +592,24 @@ a.ccard-hi:hover { color: #fff; border-color: var(--spark); }
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
 .lead + .fine { margin-top: 22px; text-align: center; }
+
+/* ---------- visual QA fixes, round 2 (2026-10-01) ---------- */
+.nb { white-space: nowrap; }
+a[href^="tel:"], a[href^="sms:"] { white-space: nowrap; }
+.thanks .lead { text-align: left; }
+.tbl td:nth-child(2) { white-space: nowrap; }
+.nav-toggle .ico-close { display: none; }
+.nav-toggle[aria-expanded="true"] .ico-menu { display: none; }
+.nav-toggle[aria-expanded="true"] .ico-close { display: block; }
+.hdr-phone { position: relative; }
+@media (max-width: 1320px) {
+  /* hidden visually, still read out: the phone link needs a name */
+  .hdr-phone-txt { display: flex; position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+}
+@media (max-width: 380px) {
+  .hdr-in, .hdr-cta { gap: 8px; }
+  .logo { gap: 8px; }
+  .logo-txt { font-size: 1.02rem; }
+}
+.area-cards { grid-template-columns: minmax(0, 1fr); }
+.area-cards a { min-width: 0; }

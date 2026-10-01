@@ -10,7 +10,7 @@ page_start(['title' => $p['title'], 'description' => $p['description'], 'path' =
 ?>
 <section class="thanks">
   <div class="wrap wrap-narrow">
-    <h1><?= e($p['h1']) ?></h1>
+    <h1><?= heading_text($p['h1']) ?></h1>
     <p class="thanks-lead"><?= e($p['lead']) ?></p>
 <?php if ($done): ?>
     <div class="thanks-box">

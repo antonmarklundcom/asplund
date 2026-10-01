@@ -35,7 +35,7 @@ $group = service_groups()[$svc['group']];
     <div class="shero-copy">
       <?= crumbs_html() ?>
       <p class="eyebrow eyebrow-ico"><?= icon($svc['icon'], 18) ?><?= e($group) ?></p>
-      <h1><?= e($svc['h1']) ?></h1>
+      <h1><?= heading_text($svc['h1']) ?></h1>
       <p class="shero-lead"><?= rich($svc['lead']) ?></p>
       <div class="hero-ctas">
         <a class="btn btn-spark btn-lg" href="<?= e(tel_href()) ?>" data-ev="phone_click"><?= icon('phone', 20) ?> Ring <?= e(site('phone')) ?></a>

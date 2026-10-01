@@ -32,7 +32,7 @@ page_start([
     <div class="shero-copy">
       <?= crumbs_html() ?>
       <p class="eyebrow eyebrow-ico"><?= icon('pin', 18) ?><?= e($a['region'] ?? 'Södertörn') ?></p>
-      <h1><?= e($a['h1']) ?></h1>
+      <h1><?= heading_text($a['h1']) ?></h1>
       <p class="shero-lead"><?= rich($a['lead']) ?></p>
       <div class="hero-ctas">
         <a class="btn btn-spark btn-lg" href="<?= e(tel_href()) ?>" data-ev="phone_click"><?= icon('phone', 20) ?> Ring <?= e(site('phone')) ?></a>
