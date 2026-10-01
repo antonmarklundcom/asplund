@@ -10,7 +10,7 @@ page_start(['title' => $p['title'], 'description' => $p['description'], 'path' =
 <section class="thanks">
   <div class="wrap wrap-narrow">
     <span class="thanks-ico"><?= icon('check', 40) ?></span>
-    <h1><?= e($p['h1']) ?></h1>
+    <h1><?= heading_text($p['h1']) ?></h1>
     <p class="thanks-lead"><?= e(site('responseText')) ?> – oftast med ett samtal där vi ställer några frågor om jobbet<?= $sel ? ' (' . e(mb_strtolower($sel['nav'])) . ')' : '' ?>.</p>
     <div class="thanks-box">
       <p class="side-h">Snabba upp det</p>

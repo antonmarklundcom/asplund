@@ -97,10 +97,10 @@ function page_end(): void
   <a class="mbar-btn mbar-primary" href="<?= e(isset($m['service']) ? '/boka/?tjanst=' . $m['service'] : '/boka/') ?>"><?= icon('arrow', 20) ?><span>Begär offert</span></a>
 </nav>
 <?php if (cfg('GA4_ID')): ?>
-<div class="consent" id="consent" hidden>
+<aside class="consent" id="consent" aria-label="Cookies" hidden>
   <p>Vi använder statistikcookies (Google Analytics) för att förstå hur sajten används. <a href="/integritetspolicy/#cookies">Läs mer</a></p>
   <div class="consent-btns"><button type="button" class="btn btn-ghost btn-sm" data-consent="deny">Endast nödvändiga</button><button type="button" class="btn btn-primary btn-sm" data-consent="grant">Godkänn statistik</button></div>
-</div>
+</aside>
 <?php endif; ?>
 <script src="<?= e(asset('/assets/js/site.js')) ?>" defer></script>
 </body>
@@ -170,7 +170,7 @@ function site_header(string $path): void
         <span class="hdr-phone-txt"><small><?= e(site('hoursText')) ?></small><?= e(site('phone')) ?></span>
       </a>
       <a class="btn btn-primary btn-sm hdr-offer" href="/boka/">Begär offert</a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav" aria-label="Öppna menyn"><?= icon('menu', 24) ?></button>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav" aria-label="Öppna menyn"><?= icon('menu', 24, 'ico ico-menu') ?><?= icon('close', 24, 'ico ico-close') ?></button>
     </div>
   </div>
 </header>
