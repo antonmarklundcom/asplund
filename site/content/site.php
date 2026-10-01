@@ -31,18 +31,18 @@ return [
     'country'      => 'SE',
     'geo'          => ['lat' => 58.9034, 'lng' => 17.9479],   // Nynäshamn centrum (ungefärligt)
 
-    // Öppettider från nuvarande sajt (mån–lör 8–20, sön stängt).
-    'hoursText'    => 'Mån–lör 08–20',
+    // Didrik 2026-10-01: 07–16. Veckodagar (mån–fre) antagna — bekräfta.
+    'hoursText'    => 'Mån–fre 07–16',
     'openingHours' => [
-        ['days' => ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'], 'opens' => '08:00', 'closes' => '20:00'],
+        ['days' => ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], 'opens' => '07:00', 'closes' => '16:00'],
     ],
 
     // --- trust ------------------------------------------------------------------
     'foundedYear'   => 2019,               // bekräftat av Anton 2026-09-09
     'jobsDone'      => '2000+',            // bekräftat av Anton 2026-09-09 (gamla sajten säger 600+)
     'registration'  => null,               // Elsäkerhetsverkets registrering — ej bekräftad
-    'award'         => 'Topp 3-nominerad till Årets Unga Företagare',  // år/arrangör ej bekräftat
-    'responseText'  => 'Vi hör av oss senast nästa arbetsdag',          // verifiera med Didrik
+    'award'         => 'Topp 3-nominerad till Årets Unga Företagare (Företagarna Nynäshamn)',  // arrangör bekräftad av Didrik; år ej känt
+    'responseText'  => 'Vi hör av oss så snart vi kan',                 // Didrik osäker ("inom några dagar?") — neutral formulering tills han bekräftar
 
     // --- links ------------------------------------------------------------------
     'googleProfileUrl' => null,            // publik Google-profil

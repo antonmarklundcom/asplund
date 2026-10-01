@@ -190,7 +190,7 @@ function site_footer(): void
         <li><a href="<?= e(tel_href()) ?>" data-ev="phone_click"><?= icon('phone', 18) ?><?= e($s['phone']) ?></a></li>
         <li><a href="mailto:<?= e($s['email']) ?>"><?= icon('mail', 18) ?><?= e($s['email']) ?></a></li>
         <li><?= icon('pin', 18) ?><span><?= e($s['street']) ?>, <?= e($s['postalCode']) ?> <?= e($s['city']) ?></span></li>
-        <li><?= icon('clock', 18) ?><span><?= e($s['hoursText']) ?>, söndag stängt</span></li>
+        <li><?= icon('clock', 18) ?><span><?= e($s['hoursText']) ?>, lör–sön stängt</span></li>
       </ul>
     </div>
     <div>
