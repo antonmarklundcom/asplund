@@ -51,7 +51,7 @@ page_start([
       <h2>ROT-avdrag och grönt avdrag 2026</h2>
       <p>Vi drar avdraget direkt på fakturan och sköter ansökan hos Skatteverket. Du betalar bara din del.</p>
       <div class="table-wrap">
-        <table class="tbl">
+        <table class="tbl tbl-stack">
           <thead><tr><th>Arbete</th><th>Avdrag</th><th>Gäller</th></tr></thead>
           <tbody>
             <tr><td>Elarbete i hemmet: elcentral, belysning, uttag, värmepump, golvvärme m.m.</td><td><b><?= (int) $d['rot']['percent'] ?> %</b> ROT</td><td>Arbetskostnaden</td></tr>

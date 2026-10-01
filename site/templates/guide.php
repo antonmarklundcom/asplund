@@ -49,7 +49,7 @@ page_start([
     <?= crumbs_html() ?>
     <p class="eyebrow">Guide</p>
     <h1><?= e($g['h1']) ?></h1>
-    <p class="ghero-meta"><?= icon('calendar', 16) ?> Uppdaterad <time datetime="<?= e($g['updated']) ?>"><?= e(sv_date($g['updated'])) ?></time> · <?= $minutes ?> min läsning · Asplund Eltjänst</p>
+    <p class="ghero-meta"><span><?= icon('calendar', 16) ?> Uppdaterad <time datetime="<?= e($g['updated']) ?>"><?= e(sv_date($g['updated'])) ?></time></span><span><?= $minutes ?> min läsning</span><span>Asplund Eltjänst</span></p>
     <p class="ghero-lead"><?= rich($g['lead']) ?></p>
   </div>
 </section>
