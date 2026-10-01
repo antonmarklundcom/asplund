@@ -23,7 +23,7 @@ page_start([
     <p class="thanks-lead">Länken kan vara gammal eller felstavad. Här är det de flesta letar efter:</p>
   </div>
   <div class="wrap">
-    <?= service_cards(['elbilsladdare', 'solceller', 'luftvarmepump', 'elcentral', 'felsokning', 'belysning'], 'cards-3') ?>
+    <?= service_cards(['elbilsladdare', 'luftvarmepump', 'elcentral', 'felsokning', 'belysning', 'eljour'], 'cards-3') ?>
     <p class="sec-more"><a class="btn btn-primary" href="/">Till startsidan</a> <a class="btn btn-light" href="<?= e(tel_href()) ?>" data-ev="phone_click"><?= icon('phone', 18) ?> <?= e(site('phone')) ?></a></p>
   </div>
 </section>

@@ -65,12 +65,6 @@ return [
                 'Vi hjälper styrelsen med ett tydligt underlag: hur många platser anslutningen klarar, vad som behöver göras i elcentralen och hur installationen kan byggas ut i etapper. Gemensamma installationer omfattas inte av privatpersoners gröna avdrag – däremot kan föreningen ibland söka andra stöd, så det är värt att kontrollera innan beslut.',
             ],
         ],
-        [
-            'h2' => 'Ladda med egen solel',
-            'p'  => [
-                'Har du eller planerar du [solceller](/solceller/) kan laddboxen styras så att bilen laddas när panelerna producerar överskott. Med ett [solcellsbatteri](/solcellsbatteri/) kan du dessutom spara dagens solel till kvällsladdningen.',
-            ],
-        ],
     ],
     'faq' => [
         ['q' => 'Hur lång tid tar det att installera en laddbox?', 'a' => 'En vanlig installation i villa tar några timmar upp till en arbetsdag. Behöver kabeln grävas ner till en laddstolpe tar det längre – det framgår alltid av offerten.'],
@@ -79,136 +73,7 @@ return [
         ['q' => 'Vilken laddbox ska jag välja?', 'a' => 'Det beror på bilen, din huvudsäkring och om du vill styra laddningen i en app eller mot elpriset. Vi rekommenderar en laddbox med lastbalansering och hjälper dig välja en modell som passar – hör av dig så går vi igenom det.'],
         ['q' => 'Installerar ni laddstolpar i BRF?', 'a' => 'Ja. Vi tar fram ett underlag för styrelsen, föreslår en lösning som klarar flera bilar och kan byggas ut, och installerar när föreningen har beslutat.'],
     ],
-    'related' => ['solceller', 'solcellsbatteri', 'elcentral'],
-],
-
-'solceller' => [
-    'path'        => '/solceller/',
-    'nav'         => 'Solceller',
-    'group'       => 'energi',
-    'icon'        => 'sun',
-    'priority'    => '0.9',
-    'title'       => 'Solceller & solpaneler – installation | Asplund Eltjänst',
-    'description' => 'Solceller till villa och fritidshus i Nynäshamn och på Södertörn. Vi dimensionerar, installerar och anmäler anläggningen. 15 % grönt avdrag direkt.',
-    'keyword'     => 'solceller',
-    'variants'    => ['solpaneler', 'solpanel', 'pris solceller', 'installera solceller', 'solceller villa', 'solceller kostnad', 'växelriktare'],
-    'h1'          => 'Solceller och solpaneler till villa och fritidshus',
-    'lead'        => 'Producera din egen el och sänk elräkningen i många år framåt. Vi hjälper dig från första förslag till färdig anläggning – med växelriktare, inkoppling i elcentralen och färdiganmälan till nätbolaget.',
-    'card'        => 'Egen el från taket – dimensionering, installation och anmälan. 15 % grönt avdrag.',
-    'deduction'   => 'gron-sol',
-    'image'       => ['src' => '/assets/img/tjanster/solceller-villa-tak.webp', 'alt' => 'Solpaneler monterade på taket till en villa på Södertörn'],
-    'includes'    => [
-        'Förslag på anläggningens storlek utifrån tak och elförbrukning',
-        'Installation av solpaneler, växelriktare och skydd',
-        'Inkoppling i elcentralen enligt gällande regler',
-        'Färdiganmälan till nätbolaget så att du kan sälja överskottet',
-        'Genomgång av appen där du följer produktionen',
-        'Grönt avdrag direkt på fakturan',
-    ],
-    'sections' => [
-        [
-            'h2' => 'Vad kostar solceller?',
-            'p'  => [
-                'Priset styrs mest av hur stor anläggningen blir, alltså hur många solpaneler som får plats och behövs för din förbrukning. Takets material och lutning, avståndet till elcentralen och valet av växelriktare påverkar också.',
-                'Solceller ger **15 % grönt avdrag på arbete och material**. Avdraget dras direkt på fakturan, och det går inte att kombinera med ROT för samma kostnad. Du får alltid ett fast pris innan vi börjar.',
-            ],
-            'checks' => [
-                'Anläggningens storlek i kilowatt (antal paneler)',
-                'Taktyp, lutning och hur panelerna fästs',
-                'Växelriktare – och om den ska kunna kopplas till batteri',
-                'Eventuella åtgärder i elcentralen',
-            ],
-        ],
-        [
-            'h2' => 'Lönar sig solceller?',
-            'p'  => [
-                'Solceller lönar sig bäst när du använder mycket av elen själv, eftersom egenförbrukad el ersätter el du annars hade köpt med skatt och nätavgift. Överskottet säljer du till ditt elbolag.',
-                'Ett tak mot söder, sydost eller sydväst utan mycket skugga ger bäst produktion, men även öst–väst kan fungera bra. I Mellansverige producerar en anläggning ungefär 800–1 000 kWh per installerad kilowatt och år, beroende på läge och skuggning.',
-                'Kombinerar du solcellerna med en [laddbox](/elbilsladdare/) eller ett [solcellsbatteri](/solcellsbatteri/) kan du använda mer av din egen el – och då blir kalkylen ofta ännu bättre.',
-            ],
-        ],
-        [
-            'h2' => 'Växelriktaren – hjärtat i anläggningen',
-            'p'  => [
-                'Solpanelerna ger likström. Växelriktaren omvandlar den till växelström som huset kan använda och visar produktionen i en app. Väljer du en så kallad hybridväxelriktare kan du koppla in ett batteri senare utan att byta ut den.',
-                'Växelriktaren har kortare livslängd än panelerna, så det lönar sig att välja en kvalitetsmodell med bra garanti.',
-            ],
-        ],
-        [
-            'h2' => 'Från förslag till färdig anläggning',
-            'checks' => [
-                'Vi går igenom tak, elcentral och elförbrukning med dig',
-                'Du får ett förslag med fast pris och beräknad produktion',
-                'Installation och inkoppling – oftast några få arbetsdagar',
-                'Vi färdiganmäler anläggningen till nätbolaget',
-                'Du följer din produktion i appen från första soliga dagen',
-            ],
-        ],
-    ],
-    'faq' => [
-        ['q' => 'Behöver jag bygglov för solceller?', 'a' => 'Oftast inte. Solpaneler som följer takets form är i de flesta fall bygglovsbefriade, men i kulturhistoriskt värdefulla områden och vissa detaljplaner kan det krävas. Kontrollera med kommunen om du är osäker.'],
-        ['q' => 'Hur mycket el producerar solceller i Stockholms län?', 'a' => 'Ungefär 800–1 000 kWh per installerad kilowatt och år, beroende på takets riktning, lutning och skuggning.'],
-        ['q' => 'Kan jag sälja överskottet?', 'a' => 'Ja. När anläggningen är färdiganmäld till nätbolaget kan du teckna avtal med ett elbolag som köper din överskottsel.'],
-        ['q' => 'Får jag ROT-avdrag för solceller?', 'a' => 'Nej, solceller ger i stället grönt avdrag på 15 % av arbete och material. Det dras direkt på fakturan. Läs mer om [avdragen](/priser/#avdrag).'],
-        ['q' => 'Fungerar solcellerna vid strömavbrott?', 'a' => 'En vanlig anläggning stängs av vid strömavbrott av säkerhetsskäl. Vill du ha reservkraft krävs en växelriktare och ett batteri med reservkraftsfunktion.'],
-    ],
-    'related' => ['solcellsbatteri', 'elbilsladdare', 'elcentral'],
-],
-
-'solcellsbatteri' => [
-    'path'        => '/solcellsbatteri/',
-    'nav'         => 'Solcellsbatteri',
-    'group'       => 'energi',
-    'icon'        => 'battery',
-    'priority'    => '0.7',
-    'title'       => 'Solcellsbatteri & hembatteri – installation och avdrag',
-    'description' => 'Lagra din solel i ett solcellsbatteri och använd den när du behöver. Vi installerar hembatteri på Södertörn med 50 % grönt avdrag på fakturan.',
-    'keyword'     => 'solcellsbatteri',
-    'variants'    => ['hembatteri', 'solcellsbatteri pris', 'batterilager', 'energilager', 'batterilager villa'],
-    'h1'          => 'Solcellsbatteri – spara dagens solel till kvällen',
-    'lead'        => 'Ett hembatteri lagrar överskottet från dina solceller så att du använder mer av din egen el – på kvällen, till elbilen eller när elpriset är högt. Batteriet ger 50 % grönt avdrag på arbete och material.',
-    'card'        => 'Lagra din egen solel och använd den på kvällen. 50 % grönt avdrag.',
-    'deduction'   => 'gron-batteri',
-    'image'       => ['src' => '/assets/img/tjanster/solcellsbatteri-hembatteri.webp', 'alt' => 'Hembatteri för solel monterat på vägg i ett teknikrum'],
-    'includes'    => [
-        'Genomgång av din solcellsanläggning och förbrukning',
-        'Förslag på batteristorlek som passar ditt hus',
-        'Installation och inkoppling mot växelriktare och elcentral',
-        'Inställning av styrning och app',
-        'Grönt avdrag direkt på fakturan',
-    ],
-    'sections' => [
-        [
-            'h2' => 'Så fungerar ett solcellsbatteri',
-            'p'  => [
-                'Mitt på dagen producerar solcellerna ofta mer än huset använder. Utan batteri säljs överskottet till ett lågt pris, och på kvällen köper du tillbaka el till fullt pris. Ett batteri jämnar ut det: överskottet laddas in och används när solen gått ner.',
-                'Många batterier kan också styras mot elpriset – de laddas när elen är billig och används när den är dyr.',
-            ],
-        ],
-        [
-            'h2' => 'Lönar sig ett hembatteri?',
-            'p'  => [
-                'Det beror på hur stor skillnad det är mellan det du får för såld el och det du betalar för köpt el, och hur mycket av din förbrukning som sker på kvällar och nätter. Med 50 % grönt avdrag har kalkylen blivit betydligt bättre än för några år sedan.',
-                'Har du ännu inga solceller är det smart att planera för batteri redan från början, med en växelriktare som klarar det. Läs mer om [solceller](/solceller/).',
-            ],
-        ],
-        [
-            'h2' => 'Vad påverkar priset?',
-            'checks' => [
-                'Batteriets kapacitet i kWh',
-                'Om befintlig växelriktare kan användas eller behöver bytas',
-                'Placering och kabeldragning',
-                'Om du vill ha reservkraft vid strömavbrott',
-            ],
-        ],
-    ],
-    'faq' => [
-        ['q' => 'Kan jag installera ett batteri utan solceller?', 'a' => 'Det går tekniskt, men grönt avdrag gäller system som lagrar egenproducerad el. För avdraget behöver batteriet alltså kopplas till din solcellsanläggning.'],
-        ['q' => 'Hur stort batteri behöver jag?', 'a' => 'För en vanlig villa brukar ett batteri som täcker kvällens och nattens förbrukning räcka. Vi räknar på din förbrukning och anläggning innan vi föreslår en storlek.'],
-        ['q' => 'Fungerar batteriet som reservkraft?', 'a' => 'Bara om systemet har reservkraftsfunktion. Det kräver rätt växelriktare och en särskild inkoppling – säg till om det är viktigt för dig.'],
-        ['q' => 'Hur mycket grönt avdrag får jag?', 'a' => '50 % av arbete och material, upp till 50 000 kr per person och år. Vi drar det direkt på fakturan.'],
-    ],
-    'related' => ['solceller', 'elbilsladdare', 'smarta-hem'],
+    'related' => ['elcentral', 'smarta-hem', 'jordfelsbrytare'],
 ],
 
 'luftvarmepump' => [
@@ -282,7 +147,7 @@ return [
         ['q' => 'Behövs bygglov för en luftvärmepump?', 'a' => 'Normalt inte för en villa, men detaljplanen kan ha bestämmelser. Bor du i bostadsrätt eller radhusområde behövs ofta föreningens godkännande för utedelen.'],
         ['q' => 'Hur lång tid tar installationen?', 'a' => 'En vanlig installation görs oftast på en dag.'],
     ],
-    'related' => ['varmepump', 'solceller', 'elcentral'],
+    'related' => ['varmepump', 'elcentral', 'smarta-hem'],
 ],
 
 'varmepump' => [

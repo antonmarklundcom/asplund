@@ -181,7 +181,7 @@ return [
     'icon'        => 'wifi',
     'priority'    => '0.6',
     'title'       => 'Smarta hem – smart belysning och styrning | Asplund',
-    'description' => 'Styr belysning, golvvärme, laddbox och solceller från mobilen. Vi installerar smarta strömbrytare, dimmers och styrning som fungerar i vardagen.',
+    'description' => 'Styr belysning, golvvärme och laddbox från mobilen. Vi installerar smarta strömbrytare, dimmers och styrning som fungerar i vardagen.',
     'keyword'     => 'smarta hem',
     'variants'    => ['hemautomation', 'smarta hem system', 'smart belysning', 'smarta hem belysning'],
     'h1'          => 'Smarta hem – styr belysning, värme och laddning enkelt',
@@ -193,7 +193,7 @@ return [
         'Smarta strömbrytare och dimmers i befintliga dosor',
         'Scener och tidsstyrning för belysning',
         'Styrning av golvvärme och element',
-        'Laddbox och solceller i samma app',
+        'Laddbox i samma app',
         'Genomgång så att hela familjen kan använda det',
     ],
     'sections' => [
@@ -210,9 +210,9 @@ return [
             ],
         ],
         [
-            'h2' => 'Laddbox och solceller i samma system',
+            'h2' => 'Laddbox i samma system',
             'p'  => [
-                'Många [laddboxar](/elbilsladdare/) och [solcellsanläggningar](/solceller/) kan kopplas ihop så att bilen laddas när solen lyser eller när elen är billig.',
+                'Många [laddboxar](/elbilsladdare/) kan styras så att bilen laddas när elen är billig.',
             ],
         ],
         [

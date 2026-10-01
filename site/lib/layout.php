@@ -196,7 +196,7 @@ function site_footer(): void
     <div>
       <p class="ftr-h">Populära tjänster</p>
       <ul>
-<?php foreach (['elbilsladdare', 'solceller', 'luftvarmepump', 'elcentral', 'felsokning', 'belysning', 'utomhusbelysning', 'golvvarme'] as $slug): $sv = service($slug); ?>
+<?php foreach (['elbilsladdare', 'luftvarmepump', 'elcentral', 'felsokning', 'eljour', 'belysning', 'utomhusbelysning', 'golvvarme'] as $slug): $sv = service($slug); ?>
         <li><a href="<?= e($sv['path']) ?>"><?= e($sv['nav']) ?></a></li>
 <?php endforeach; ?>
         <li><a href="/tjanster/">Alla tjänster →</a></li>

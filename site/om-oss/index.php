@@ -17,7 +17,7 @@ page_start(['title' => $p['title'], 'description' => $p['description'], 'path' =
     <div class="split-copy prose">
       <h2>Ett lokalt elföretag från Nynäshamn</h2>
       <p>Asplund Eltjänst grundades <?= e((string) $s['foundedYear']) ?> av <?= e($s['owner']) ?>. Idén var enkel: att vara elektrikern man faktiskt får tag på, som kommer när vi har sagt, gör jobbet ordentligt och lämnar ett tydligt besked om vad som är gjort.</p>
-      <p>Sedan starten har det blivit <?= e($s['jobsDone']) ?> uppdrag – allt från ett nytt eluttag i en lägenhet till laddboxar, solceller, nya elcentraler och kompletta elinstallationer vid renovering. Våra kunder är villaägare, fritidshusägare, bostadsrättsföreningar och företag i Nynäshamn och på hela Södertörn.</p>
+      <p>Sedan starten har det blivit <?= e($s['jobsDone']) ?> uppdrag – allt från ett nytt eluttag i en lägenhet till laddboxar, luftvärmepumpar, nya elcentraler och kompletta elinstallationer vid renovering. Våra kunder är villaägare, fritidshusägare, bostadsrättsföreningar och företag i Nynäshamn och på hela Södertörn.</p>
 <?php if ($s['award']): ?>
       <p class="badge-line"><?= icon('award', 20) ?><span><?= e($s['award']) ?></span></p>
 <?php endif; ?>

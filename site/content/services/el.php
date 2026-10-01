@@ -16,7 +16,7 @@ return [
     'keyword'     => 'elcentral',
     'variants'    => ['proppskåp', 'säkringsskåp', 'byta elcentral', 'byta elcentral pris', 'byta proppskåp till automatsäkringar', 'överspänningsskydd', 'gruppförteckning elcentral'],
     'h1'          => 'Byta elcentral – från gammalt proppskåp till modern central',
-    'lead'        => 'En modern elcentral med automatsäkringar och jordfelsbrytare gör huset säkrare och har plats för laddbox, värmepump och solceller. Vi byter elcentralen på en dag i de flesta villor.',
+    'lead'        => 'En modern elcentral med automatsäkringar och jordfelsbrytare gör huset säkrare och har plats för laddbox och värmepump. Vi byter elcentralen på en dag i de flesta villor.',
     'card'        => 'Automatsäkringar, jordfelsbrytare och plats för laddbox och värmepump.',
     'deduction'   => 'rot',
     'image'       => ['src' => '/assets/img/tjanster/elcentral-automatsakringar.webp', 'alt' => 'Ny elcentral med automatsäkringar och jordfelsbrytare i en villa'],
@@ -57,7 +57,7 @@ return [
             'h2' => 'Överspänningsskydd',
             'id' => 'overspanningsskydd',
             'p'  => [
-                'Ett överspänningsskydd i elcentralen skyddar husets elektronik mot spänningstoppar, till exempel vid åska eller fel i elnätet. Det är särskilt värdefullt om du har dyr elektronik, värmepump, solceller eller bor på landet med luftledningar. Det monteras enklast i samband med ett centralbyte.',
+                'Ett överspänningsskydd i elcentralen skyddar husets elektronik mot spänningstoppar, till exempel vid åska eller fel i elnätet. Det är särskilt värdefullt om du har dyr elektronik, värmepump eller bor på landet med luftledningar. Det monteras enklast i samband med ett centralbyte.',
             ],
         ],
     ],
@@ -88,7 +88,7 @@ return [
     'includes'    => [
         'Kontroll av befintlig elcentral',
         'Installation av jordfelsbrytare på husets grupper',
-        'Rätt typ för laddbox, värmepump och solceller',
+        'Rätt typ för laddbox och värmepump',
         'Funktionstest och mätning',
         'Felsökning om den löser ut efter installationen',
     ],
@@ -108,9 +108,9 @@ return [
             ],
         ],
         [
-            'h2' => 'Rätt typ för laddbox och solceller',
+            'h2' => 'Rätt typ för laddbox och värmepump',
             'p'  => [
-                'Laddboxar, vissa värmepumpar och solcellsanläggningar kan ge upphov till likström som en vanlig jordfelsbrytare inte känner av. Därför krävs ibland en jordfelsbrytare av typ B, eller en laddbox med inbyggt likströmsskydd. Vi väljer rätt skydd för din installation.',
+                'Laddboxar och vissa värmepumpar kan ge upphov till likström som en vanlig jordfelsbrytare inte känner av. Därför krävs ibland en jordfelsbrytare av typ B, eller en laddbox med inbyggt likströmsskydd. Vi väljer rätt skydd för din installation.',
             ],
         ],
         [
