@@ -234,6 +234,8 @@ function media(?array $image, string $icon = 'bolt', array $opt = []): string
 {
     $class = 'media' . (isset($opt['class']) ? ' ' . $opt['class'] : '');
     if ($image !== null) {
+        // The class belongs to the <figure> only; on the <img> too, its margins/aspect-ratio apply twice.
+        unset($opt['class']);
         $pic = picture($image['src'], $image['alt'], $opt + ['sizes' => '(min-width: 960px) 540px, 100vw']);
         if ($pic !== '') {
             return '<figure class="' . e($class) . '">' . $pic . '</figure>';
