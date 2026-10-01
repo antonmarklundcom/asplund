@@ -10,8 +10,8 @@ php tools/make-routes.php            # create route files for new content record
 php tools/make-zip.php               # dist/asplundeltjanst-<date>.zip for public_html
 ```
 
-- **Content is data:** `content/site.php` (business facts), `services/*.php` (21 service
-  pages), `areas.php` (4 location pages), `guides.php` (blog), `pages.php` (static page
+- **Content is data:** `content/site.php` (business facts), `services/*.php` (22 service
+  pages), `areas.php` (6 location pages), `guides.php` (blog), `pages.php` (static page
   meta), `redirects.php` (301s from the old WordPress site), `deductions.php` (ROT/grönt).
 - **Code:** `lib/app.php` (config, SEO, schema, icons, images), `lib/layout.php` (head,
   header with mega menu, footer, mobile call bar), `lib/components.php` (lead form, FAQ,

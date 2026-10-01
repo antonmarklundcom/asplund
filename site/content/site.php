@@ -52,7 +52,7 @@ return [
 
     // --- service area -------------------------------------------------------------
     'areaServed' => ['Nynäshamn', 'Ösmo', 'Sorunda', 'Torö', 'Stora Vika', 'Västerhaninge',
-                     'Haninge', 'Tyresö', 'Huddinge', 'Södertälje', 'Botkyrka', 'Södertörn'],
+                     'Haninge', 'Tyresö', 'Huddinge', 'Södertälje', 'Botkyrka', 'Nacka', 'södra Stockholm', 'Södertörn'],
 
     // Riktiga Google-omdömen klistras in ordagrant: ['name'=>, 'area'=>, 'text'=>, 'rating'=>5].
     // Tom lista = sektionen visas inte. Påhittade omdömen är förbjudna.

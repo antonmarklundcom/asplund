@@ -132,7 +132,7 @@ page_start([
     <div>
       <p class="eyebrow eyebrow-spark">Områden</p>
       <h2>Elektriker på hela Södertörn</h2>
-      <p>Vi utgår från Brunnsgatan i Nynäshamn och är snabbt på plats i Ösmo, Sorunda, Torö och Stora Vika. Vi tar också jobb i Haninge, Tyresö, Huddinge och Södertälje – och i skärgården.</p>
+      <p>Vi utgår från Brunnsgatan i Nynäshamn och är snabbt på plats i Ösmo, Sorunda, Torö och Stora Vika. Vi tar också jobb i Haninge, Tyresö, Huddinge, Södertälje, Nacka och södra Stockholm – och i skärgården.</p>
       <?= area_chips() ?>
     </div>
     <ul class="area-cards">
