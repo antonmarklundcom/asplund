@@ -255,6 +255,12 @@ return [
             ],
         ],
         [
+            'h2' => 'Märken: Mitsubishi Electric, Toshiba och Gree',
+            'p'  => [
+                'Vi är återförsäljare åt Mitsubishi Electric, Toshiba och Gree. Föredrar du ett annat märke kan vi köpa in det också – berätta vad du har tittat på så hittar vi en modell som passar huset.',
+            ],
+        ],
+        [
             'h2' => 'Rätt placering gör stor skillnad',
             'p'  => [
                 'Innedelen ska sitta centralt och högt så att den varma luften sprids i så stor del av huset som möjligt – ofta i hallen eller i ett öppet vardagsrum. Utedelen placeras skyddat från snö och dropp, med fritt luftflöde och med hänsyn till grannar och sovrumsfönster.',

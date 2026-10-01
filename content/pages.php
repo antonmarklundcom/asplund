@@ -51,7 +51,7 @@ return [
     ],
     '/kontakt/' => [
         'title'       => 'Kontakta oss – Asplund Eltjänst i Nynäshamn',
-        'description' => 'Ring 070-960 20 71, mejla eller skicka en förfrågan. Asplund Eltjänst, Brunnsgatan 18, Nynäshamn. Öppet måndag–lördag 08–20.',
+        'description' => 'Ring 070-960 20 71, mejla eller skicka en förfrågan. Asplund Eltjänst, Brunnsgatan 18, Nynäshamn. Öppet måndag–fredag 07–16.',
         'h1'          => 'Kontakta oss',
         'lead'        => 'Snabbast når du oss på telefon. Du kan också mejla eller skicka formuläret – vi återkommer med pris och förslag på tid.',
         'priority'    => '0.7',

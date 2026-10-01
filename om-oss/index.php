@@ -51,7 +51,7 @@ page_start(['title' => $p['title'], 'description' => $p['description'], 'path' =
       <li><span>Adress</span><b><?= e($s['street']) ?>, <?= e($s['postalCode']) ?> <?= e($s['city']) ?></b></li>
       <li><span>Telefon</span><b><a href="<?= e(tel_href()) ?>" data-ev="phone_click"><?= e($s['phone']) ?></a></b></li>
       <li><span>E-post</span><b><a href="mailto:<?= e($s['email']) ?>"><?= e($s['email']) ?></a></b></li>
-      <li><span>Öppettider</span><b><?= e($s['hoursText']) ?>, söndag stängt</b></li>
+      <li><span>Öppettider</span><b><?= e($s['hoursText']) ?>, lör–sön stängt</b></li>
 <?php if ($s['registration']): ?>
       <li><span>Registrerat hos Elsäkerhetsverket</span><b><?= e($s['registration']) ?></b></li>
 <?php endif; ?>

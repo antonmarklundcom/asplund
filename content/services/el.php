@@ -246,7 +246,7 @@ return [
         [
             'h2' => 'Så hjälper vi vid elfel',
             'p'  => [
-                'Ring oss på ' . site('phone') . ' så får du besked direkt om när vi kan komma. Vi arbetar mån–lör 08–20 och utgår från Nynäshamn, med jobb i hela Södertörn.',
+                'Ring oss på ' . site('phone') . ' så får du besked direkt om när vi kan komma. Vi arbetar ' . mb_strtolower(site('hoursText')) . ' och utgår från Nynäshamn, med jobb i hela Södertörn.',
                 'På plats felsöker vi systematiskt grupp för grupp och mäter isolationen i kablarna, så att vi hittar även fel som inte syns. Går felet att åtgärda direkt gör vi det, och du får ett tydligt besked om vad som var fel. Är installationen gammal föreslår vi hur den kan göras säker – läs mer om [jordfelsbrytare](/jordfelsbrytare/) och att [byta elcentral](/elcentral/).',
             ],
         ],
@@ -261,7 +261,7 @@ return [
         ['q' => 'Vad gör jag om det är strömlöst i hela huset?', 'a' => 'Kolla först om grannarna också saknar ström – då är det ett fel i elnätet och du kontaktar ditt elnätsbolag. Är det bara ditt hus, kontrollera jordfelsbrytare och säkringar i elcentralen. Löser de ut igen ska en elektriker felsöka.'],
         ['q' => 'Är det farligt när jordfelsbrytaren löser ut?', 'a' => 'Jordfelsbrytaren löser ut för att skydda dig, så själva utlösningen är ingen fara. Löser den ut om och om igen finns ett fel som behöver felsökas – dra ur apparater en i taget för att se om en av dem är orsaken.'],
         ['q' => 'Vad kostar det när ni felsöker ett akut elfel?', 'a' => 'Felsökning debiteras på löpande räkning eftersom det är svårt att veta i förväg hur lång tid det tar. Fråga oss om pris när du ringer. ROT-avdraget på 30 % dras på arbetskostnaden.'],
-        ['q' => 'Vilka öppettider har ni?', 'a' => 'Vi arbetar mån–lör 08–20. Är det fara för liv eller brand ringer du 112 oavsett tid.'],
+        ['q' => 'Vilka öppettider har ni?', 'a' => 'Vi arbetar ' . mb_strtolower(site('hoursText')) . '. Är det fara för liv eller brand ringer du 112 oavsett tid.'],
     ],
     'related' => ['felsokning', 'jordfelsbrytare', 'elcentral'],
 ],
@@ -392,10 +392,10 @@ return [
     'group'       => 'el',
     'icon'        => 'clipboard',
     'priority'    => '0.6',
-    'title'       => 'Elbesiktning av villa & elrevision | Asplund Eltjänst',
-    'description' => 'Elkontroll av villa, fritidshus och BRF: vi kontrollerar elcentral, jordfelsbrytare, uttag och kablar och lämnar ett tydligt protokoll med åtgärder.',
+    'title'       => 'Elbesiktning av villa – genomgång av el | Asplund',
+    'description' => 'Elkontroll av villa, fritidshus och BRF: vi går igenom elcentral, jordfelsbrytare, uttag och kablar och ger dig råd om vad som bör åtgärdas.',
     'keyword'     => 'elbesiktning',
-    'variants'    => ['elrevision', 'elbesiktning villa', 'elbesiktning pris', 'elkontroll'],
+    'variants'    => ['elrevision', 'elbesiktning villa', 'elbesiktning pris', 'elkontroll', 'genomgång av elanläggning'],
     'h1'          => 'Elbesiktning och elkontroll – vet hur säker din el är',
     'lead'        => 'Ska du köpa hus, har du ärvt ett fritidshus eller känns elen bara gammal? Vi går igenom installationen och berättar tydligt vad som är bra, vad som bör åtgärdas och i vilken ordning.',
     'card'        => 'Genomgång av elen vid husköp, i äldre hus och i BRF.',
@@ -406,7 +406,7 @@ return [
         'Test av jordfelsbrytare och kontroll av jordning',
         'Isolationsmätning där det behövs',
         'Kontroll av uttag, strömbrytare och synliga kablar',
-        'Skriftligt protokoll med prioriterade åtgärder',
+        'Konsultation: råd om vad som bör åtgärdas och i vilken ordning',
     ],
     'sections' => [
         [
@@ -426,16 +426,16 @@ return [
             ],
         ],
         [
-            'h2' => 'Elrevision för BRF och företag',
+            'h2' => 'Genomgång för BRF och företag',
             'p'  => [
-                'För fastigheter och verksamheter är regelbunden kontroll av elanläggningen ett sätt att uppfylla innehavarens ansvar för elsäkerheten och ofta ett krav från försäkringsbolaget. Vi kontrollerar gemensamma utrymmen, tvättstugor, belysning och elcentraler och lämnar en åtgärdslista.',
+                'För fastigheter och verksamheter är regelbunden kontroll av elanläggningen ett sätt att uppfylla innehavarens ansvar för elsäkerheten och ofta ett krav från försäkringsbolaget. Vi går igenom gemensamma utrymmen, tvättstugor, belysning och elcentraler och ger råd om vad som bör åtgärdas.',
             ],
         ],
     ],
     'faq' => [
         ['q' => 'Vad kostar en elbesiktning av en villa?', 'a' => 'Det beror på husets storlek och hur omfattande kontroll du vill ha. Hör av dig så lämnar vi ett fast pris för genomgången.'],
         ['q' => 'Ingår elen i en vanlig överlåtelsebesiktning?', 'a' => 'En överlåtelsebesiktning tittar sällan närmare på elinstallationen. Vill du veta hur elen mår behöver den kontrolleras separat.'],
-        ['q' => 'Kan ni åtgärda det ni hittar?', 'a' => 'Ja. Du får ett protokoll med prioriterade åtgärder och kan välja att låta oss göra dem direkt eller senare.'],
+        ['q' => 'Kan ni åtgärda det ni hittar?', 'a' => 'Ja. Du får råd om vad som bör åtgärdas och i vilken ordning, och kan välja att låta oss göra det direkt eller senare.'],
     ],
     'related' => ['elcentral', 'jordfelsbrytare', 'felsokning'],
 ],
