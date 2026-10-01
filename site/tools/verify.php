@@ -124,7 +124,7 @@ $res = fetch($base . '/elbilsladdare');
 if ($res['code'] !== 301 || $res['location'] !== '/elbilsladdare/') { $bad("/elbilsladdare (no slash) → {$res['code']} {$res['location']}"); }
 $res = fetch($base . '/finns-inte-alls/');
 if ($res['code'] !== 404) { $bad("unknown URL → {$res['code']} (want 404)"); }
-foreach (['/lib/app.php', '/content/site.php', '/config.example.php', '/logs/'] as $p) {
+foreach (['/lib/app.php', '/content/site.php', '/config.example.php', '/logs/', '/README.md', '/verify.sh', '/.gitignore', '/.git/config'] as $p) {
     $res = fetch($base . $p);
     if ($res['code'] === 200 && !str_contains($res['body'], 'Sidan hittades inte')) { $bad("{$p} is publicly readable"); }
 }

@@ -25,6 +25,9 @@ AddDefaultCharset UTF-8
   # Internal code and data are never served.
   RewriteRule ^(lib|content|templates|tools|docs|logs|dist)(/|$) route.php [L]
   RewriteRule ^(config|config\.example|router)\.php$ route.php [L]
+  # Repo files that ride along with a Git deploy: README, verify.sh, .git, .gitignore.
+  RewriteRule ^(README\.md|verify\.sh)$ route.php [L]
+  RewriteRule (^|/)\.(?!well-known/) route.php [L]
 
   # Everything that is not a real file or directory: redirects, slash fix, 404.
   RewriteCond %{REQUEST_FILENAME} !-f
