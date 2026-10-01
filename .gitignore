@@ -1,0 +1,6 @@
+# Only the v2 site and the handoff are tracked. Everything else at this level is
+# the archived September template build — kept on disk, never committed here.
+/*
+!/.gitignore
+!/HANDOFF.md
+!/site/
