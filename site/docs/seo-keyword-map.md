@@ -36,8 +36,9 @@ excluded — an electrician can't win them. One meaning group = one page or sect
 | Elbesiktning 630 | /elbesiktning/ | elbesiktning 260 | built |
 | Byta proppskåp ~190 | /blogg/byta-proppskap-till-automatsakringar/ | byta proppskåp till automatsäkringar | built |
 | Elektriker haninge/tyresö/huddinge/södertälje 260 each | /elektriker-<ort>/ | elektriker <ort> | built |
-| Eljour 1,460 (CPC up to 270 kr) | — | eljour | NOT built — only if Didrik does call-outs |
-| Elektriker stockholm 2,400, nacka 480 | — | — | skipped (out of area / too competitive) |
+| Eljour 1,460 | /eljour/ | eljour 1,460 | built (SEO page; no 24/7 or response-time claims — see facts-to-verify #13) |
+| Elektriker stockholm 2,400 | /elektriker-stockholm/ | elektriker stockholm 2,400 | built as "södra Stockholm" (facts-to-verify #14) |
+| Elektriker nacka 480 | /elektriker-nacka/ | elektriker nacka 480 | built (facts-to-verify #14) |
 
 ## Next content (monthly freshness, in this order)
 1. /blogg/jordfelsbrytare-typ-b/ or "laddbox trefas" (laddbox long tail)

@@ -200,6 +200,72 @@ return [
     'related' => ['jordfelsbrytare', 'elcentral', 'elbesiktning'],
 ],
 
+'eljour' => [
+    'path'        => '/eljour/',
+    'nav'         => 'Eljour & akuta elfel',
+    'group'       => 'el',
+    'icon'        => 'bolt',
+    'priority'    => '0.8',
+    'title'       => 'Eljour – akut elektriker i Nynäshamn | Asplund',
+    'description' => 'Akut elfel? Strömlöst, jordfelsbrytaren löser ut eller det luktar bränt? Så agerar du först – och ring behörig elektriker i Nynäshamn för hjälp.',
+    'keyword'     => 'eljour',
+    'variants'    => ['elektriker jour', 'jour elektriker', 'akut elektriker', 'elektriker akut', 'elfel akut', 'jourelektriker'],
+    'h1'          => 'Eljour – akut elektriker vid elfel',
+    'lead'        => 'Strömlöst, jordfelsbrytaren löser ut igen eller det luktar bränt från ett uttag? Här är vad du gör först – och när du ska ringa en elektriker direkt.',
+    'card'        => 'Strömlöst, jordfelsbrytare som löser ut, bränd lukt eller varma uttag.',
+    'deduction'   => 'rot',
+    'image'       => ['src' => '/assets/img/tjanster/eljour-akut-elfel.webp', 'alt' => 'Elektriker med ficklampa vid en elcentral en kväll vid akut elfel'],
+    'includes'    => [
+        'Felsökning med mätinstrument, grupp för grupp',
+        'Åtgärd på plats när det går',
+        'Tydligt besked om vad som var fel och vad som har gjorts',
+        'Förslag på att åtgärda orsaken, till exempel ny elcentral eller jordfelsbrytare',
+    ],
+    'sections' => [
+        [
+            'h2' => 'Gör det här först vid ett akut elfel',
+            'list' => [
+                '**Brand, rök eller elolycka:** ring 112 först. Ring inte en elektriker i ett akut läge där liv eller egendom är i fara.',
+                '**Bränd lukt eller ett varmt uttag:** stäng av strömmen till gruppen i elcentralen, rör inte uttaget och ring en elektriker.',
+                '**Strömlöst i hela huset:** titta efter om grannarna också har strömavbrott. Då är det ett fel i elnätet och ditt elnätsbolag är rätt kontakt.',
+                '**Bara en del av huset är strömlöst:** kontrollera jordfelsbrytare och säkringar i elcentralen. Löser de ut igen direkt finns ett fel som behöver felsökas.',
+                '**Fuktskada eller vatten vid el:** gå inte nära, stäng av strömmen om du kan göra det säkert och ring en elektriker.',
+            ],
+            'note' => 'Öppna aldrig elcentral, kopplingsdosor eller uttag själv. Arbete i den fasta installationen ska göras av ett elinstallationsföretag.',
+        ],
+        [
+            'h2' => 'Ring en elektriker direkt om…',
+            'checks' => [
+                'ett uttag, en strömbrytare eller en kabel är varm, luktar bränt eller gnistrar',
+                'jordfelsbrytaren löser ut igen så fort du slår på den, utan att något är inkopplat',
+                'lampor blir starkare eller svagare när andra apparater slås på – det kan vara ett nollfel',
+                'du får stötar från en apparat, kran eller badkar',
+                'det finns synlig skada på elcentral, kabel eller mätare efter åska, vatten eller brand',
+            ],
+        ],
+        [
+            'h2' => 'Så hjälper vi vid elfel',
+            'p'  => [
+                'Ring oss på ' . site('phone') . ' så får du besked direkt om när vi kan komma. Vi arbetar mån–lör 08–20 och utgår från Nynäshamn, med jobb i hela Södertörn.',
+                'På plats felsöker vi systematiskt grupp för grupp och mäter isolationen i kablarna, så att vi hittar även fel som inte syns. Går felet att åtgärda direkt gör vi det, och du får ett tydligt besked om vad som var fel. Är installationen gammal föreslår vi hur den kan göras säker – läs mer om [jordfelsbrytare](/jordfelsbrytare/) och att [byta elcentral](/elcentral/).',
+            ],
+        ],
+        [
+            'h2' => 'Förebygg nästa elfel',
+            'p'  => [
+                'Många akuta elfel går att undvika. Testa jordfelsbrytaren några gånger om året, byt gamla proppskåp mot modern elcentral och lägg överspänningsskydd i centralen om du bor med luftledning. Du kan också boka en [elbesiktning](/elbesiktning/) för att få veta skicket på installationen innan något går fel.',
+            ],
+        ],
+    ],
+    'faq' => [
+        ['q' => 'Vad gör jag om det är strömlöst i hela huset?', 'a' => 'Kolla först om grannarna också saknar ström – då är det ett fel i elnätet och du kontaktar ditt elnätsbolag. Är det bara ditt hus, kontrollera jordfelsbrytare och säkringar i elcentralen. Löser de ut igen ska en elektriker felsöka.'],
+        ['q' => 'Är det farligt när jordfelsbrytaren löser ut?', 'a' => 'Jordfelsbrytaren löser ut för att skydda dig, så själva utlösningen är ingen fara. Löser den ut om och om igen finns ett fel som behöver felsökas – dra ur apparater en i taget för att se om en av dem är orsaken.'],
+        ['q' => 'Vad kostar det när ni felsöker ett akut elfel?', 'a' => 'Felsökning debiteras på löpande räkning eftersom det är svårt att veta i förväg hur lång tid det tar. Fråga oss om pris när du ringer. ROT-avdraget på 30 % dras på arbetskostnaden.'],
+        ['q' => 'Vilka öppettider har ni?', 'a' => 'Vi arbetar mån–lör 08–20. Är det fara för liv eller brand ringer du 112 oavsett tid.'],
+    ],
+    'related' => ['felsokning', 'jordfelsbrytare', 'elcentral'],
+],
+
 'eluttag' => [
     'path'        => '/eluttag/',
     'nav'         => 'Eluttag & strömbrytare',

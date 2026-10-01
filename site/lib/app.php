@@ -394,7 +394,7 @@ function schema_service(array $svc): array
         'description' => $svc['description'],
         'url'         => abs_url($svc['path']),
         'provider'    => ['@id' => business_id()],
-        'areaServed'  => array_map(static fn ($c) => ['@type' => 'Place', 'name' => $c], ['Nynäshamn', 'Haninge', 'Tyresö', 'Huddinge', 'Södertälje', 'Södertörn']),
+        'areaServed'  => array_map(static fn ($c) => ['@type' => 'Place', 'name' => $c], ['Nynäshamn', 'Haninge', 'Tyresö', 'Huddinge', 'Södertälje', 'Nacka', 'södra Stockholm', 'Södertörn']),
     ];
 }
 
