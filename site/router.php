@@ -17,7 +17,7 @@ if ($path === '/robots.txt') {
     require __DIR__ . '/robots.php';
     return true;
 }
-if (preg_match('#^/(lib|content|templates|tools|docs|logs|dist)(/|$)#', $path) || preg_match('#^/(config(\.example)?|router|route)\.php$#', $path)) {
+if (preg_match('#^/(lib|content|templates|tools|docs|logs|dist)(/|$)#', $path) || preg_match('#^/(config(\.example)?|router|route)\.php$#', $path) || preg_match('#^/(README\.md|verify\.sh)$#', $path) || preg_match('#(^|/)\.(?!well-known/)#', $path)) {
     require __DIR__ . '/route.php';
     return true;
 }
