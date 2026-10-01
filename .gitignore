@@ -1,0 +1,4 @@
+config.php
+logs/*
+!logs/.htaccess
+dist/
