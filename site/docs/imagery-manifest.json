@@ -10,7 +10,8 @@
   "result_sizes_checked": "4:3 1k returned 1168x880 (not ~1536x1152 as assumed); 16:9 2k returned 2688x1520",
   "known_shortfall": "4:3 service images are 1168x876 px, ~2.7% under the 1200x900 slot minimum (webimg does not upscale). Displayed ~340px wide; only og:image use is marginally affected. Fix if wanted: regenerate those 18 at resolution 2k (18 credits) and re-run webimg with the same names.",
   "conversion": "webimg convert --name <slug> --ar <ratio> --widths 1200|1920 into a scratch dir, then <slug>-<w>.webp/.avif copied to the exact slot path (webimg's -<width> suffix is not used on this site)",
-  "download_status": "done - files committed under site/assets/img/tjanster and site/assets/img/blogg"
+  "download_status": "done - files committed under site/assets/img/tjanster and site/assets/img/blogg",
+  "removed": "solceller-villa-tak and solcellsbatteri-hembatteri deleted 2026-10-01: Didrik does not install solar (pages removed). Credits already spent (1.0 total)."
  },
  "images": [
   {
@@ -28,40 +29,6 @@
    "prompt": "Realistic Nordic documentary photograph, natural daylight, a wall-mounted electric car charging box (EV wallbox, plain white and grey, no brand logo) mounted on the exterior wall of a Swedish villa, charging cable neatly coiled, red wooden house facade, gravel driveway. No text, no logos, no people.",
    "url": "https://d8j0ntlcm91z4.cloudfront.net/user_349VrHjTFIpx9q71lpfpAXcLXvR/hf_20261001_180235_b88a305a-83f8-453c-80ca-f266975472b7.png",
    "job_id": "b88a305a-83f8-453c-80ca-f266975472b7",
-   "source": "higgsfield"
-  },
-  {
-   "id": "solceller-villa-tak",
-   "file": "/assets/img/tjanster/solceller-villa-tak.webp",
-   "file_avif": "/assets/img/tjanster/solceller-villa-tak.avif",
-   "alt_sv": "Solpaneler monterade på taket till en villa på Södertörn",
-   "ratio": "4:3",
-   "px": "1168x876",
-   "source_px": "1168x880",
-   "model": "gpt_image_2_5",
-   "variant": "sunburst",
-   "quality": "medium",
-   "resolution": "1k",
-   "prompt": "Realistic Nordic documentary photograph, soft overcast daylight, solar panels mounted on the roof of a Swedish villa in the Stockholm archipelago region (Södertörn), pine trees, dark tiled roof, white wooden house. No text, no logos, no people.",
-   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_349VrHjTFIpx9q71lpfpAXcLXvR/hf_20261001_180235_ad6b018c-65da-4470-b234-db31831f4cc8.png",
-   "job_id": "ad6b018c-65da-4470-b234-db31831f4cc8",
-   "source": "higgsfield"
-  },
-  {
-   "id": "solcellsbatteri-hembatteri",
-   "file": "/assets/img/tjanster/solcellsbatteri-hembatteri.webp",
-   "file_avif": "/assets/img/tjanster/solcellsbatteri-hembatteri.avif",
-   "alt_sv": "Hembatteri för solel monterat på vägg i ett teknikrum",
-   "ratio": "4:3",
-   "px": "1168x876",
-   "source_px": "1168x880",
-   "model": "gpt_image_2_5",
-   "variant": "sunburst",
-   "quality": "medium",
-   "resolution": "1k",
-   "prompt": "Realistic interior documentary photograph, natural light from a small window, a home solar battery storage unit (plain white wall-mounted, no brand logo) in a tidy utility room next to neatly routed cables and a fuse cabinet. No text, logos or people.",
-   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_349VrHjTFIpx9q71lpfpAXcLXvR/hf_20261001_180235_10b78696-b836-462e-865b-9b5c6dbfa83c.png",
-   "job_id": "10b78696-b836-462e-865b-9b5c6dbfa83c",
    "source": "higgsfield"
   },
   {

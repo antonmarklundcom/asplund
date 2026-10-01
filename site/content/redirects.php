@@ -6,7 +6,7 @@
  *
  * Old URLs that still exist with the same path (kept on purpose so their
  * rankings carry over): /, /blogg/, /kontakt/, /om-oss/, /boka/, /belysning/,
- * /elbilsladdare/, /solceller/, /felsokning/, /luftvarmepump/.
+ * /elbilsladdare/, /felsokning/, /luftvarmepump/.
  *
  * Exact paths map to a target. Prefix rules (ending in *) catch whole trees.
  */
@@ -33,7 +33,9 @@ return [
         '/tjanster/belysning/'      => '/belysning/',
         '/tjanster/felsokning/'     => '/felsokning/',
         '/tjanster/elinstallation/' => '/dra-el/',
-        '/tjanster/solceller/'      => '/solceller/',
+        '/tjanster/solceller/'      => '/tjanster/',
+        '/solceller/'               => '/tjanster/',   // Didrik installerar inte solceller (2026-10-01)
+        '/solcellsbatteri/'         => '/tjanster/',
         '/tjanster/el-i-badrum/'    => '/badrum/',
         '/tjanster/elsakerhet/'     => '/elbesiktning/',
         '/omraden/nynashamn/'       => '/',

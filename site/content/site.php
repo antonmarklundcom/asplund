@@ -16,7 +16,7 @@ return [
     'owner'       => 'Didrik Asplund',
     'domain'      => 'asplundeltjanst.se',
     'tagline'     => 'Behörig elektriker i Nynäshamn och på Södertörn',
-    'description' => 'Behörig elektriker i Nynäshamn och på Södertörn. Laddbox, solceller, '
+    'description' => 'Behörig elektriker i Nynäshamn och på Södertörn. Laddbox, '
                    . 'luftvärmepump, elcentral, belysning och felsökning för villa, fritidshus, '
                    . 'BRF och företag.',
 

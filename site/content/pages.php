@@ -9,16 +9,16 @@ declare(strict_types=1);
 return [
     '/' => [
         'title'       => 'Elektriker i Nynäshamn & Södertörn – Asplund Eltjänst',
-        'description' => 'Behörig elektriker i Nynäshamn och på Södertörn. Laddbox, solceller, luftvärmepump, elcentral och belysning. Fast pris och ROT direkt på fakturan.',
+        'description' => 'Behörig elektriker i Nynäshamn och på Södertörn. Laddbox, luftvärmepump, elcentral, belysning och felsökning. Fast pris och ROT direkt på fakturan.',
         'h1'          => 'Elektriker i Nynäshamn och på Södertörn',
-        'lead'        => 'Laddbox, solceller, luftvärmepump, elcentral, belysning och felsökning – för villa, fritidshus, BRF och företag. Du får ett fast pris innan vi börjar, och vi drar ROT eller grönt avdrag direkt på fakturan.',
+        'lead'        => 'Laddbox, luftvärmepump, elcentral, belysning och felsökning – för villa, fritidshus, BRF och företag. Du får ett fast pris innan vi börjar, och vi drar ROT eller grönt avdrag direkt på fakturan.',
         'priority'    => '1.0',
     ],
     '/tjanster/' => [
         'title'       => 'Våra eltjänster – allt inom el | Asplund Eltjänst',
-        'description' => 'Alla våra eltjänster: laddbox, solceller, värmepump, elcentral, jordfelsbrytare, belysning, badrum, golvvärme och felsökning. Nynäshamn och Södertörn.',
+        'description' => 'Alla våra eltjänster: laddbox, värmepump, elcentral, jordfelsbrytare, belysning, badrum, golvvärme och felsökning. Nynäshamn och Södertörn.',
         'h1'          => 'Våra eltjänster',
-        'lead'        => 'Från ett nytt eluttag till en hel solcellsanläggning – här är allt vi hjälper till med. Hittar du inte det du söker? Ring oss, det är troligen något vi gör.',
+        'lead'        => 'Från ett nytt eluttag till en komplett elinstallation – här är allt vi hjälper till med. Hittar du inte det du söker? Ring oss, det är troligen något vi gör.',
         'priority'    => '0.8',
     ],
     '/priser/' => [

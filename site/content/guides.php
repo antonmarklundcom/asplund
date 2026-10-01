@@ -21,7 +21,7 @@ return [
     'keyword'     => 'grön teknik avdrag',
     'service'     => 'elbilsladdare',
     'image'       => ['src' => '/assets/img/blogg/gront-avdrag.webp', 'alt' => 'Villa med solpaneler på taket och laddbox vid uppfarten'],
-    'lead'        => 'Ska du installera laddbox, solceller eller ett hembatteri? Då kan du få en stor del av kostnaden tillbaka direkt på fakturan genom skattereduktionen för grön teknik. Här är reglerna för 2026.',
+    'lead'        => 'Ska du installera laddbox? Då kan du få en stor del av kostnaden tillbaka direkt på fakturan genom skattereduktionen för grön teknik. Här är reglerna för 2026.',
     'sections'    => [
         [
             'h2' => 'Så mycket får du i grönt avdrag 2026',
@@ -199,7 +199,7 @@ return [
                 'Du har porslinssäkringar och letar proppar när något löser ut',
                 'Det finns ingen jordfelsbrytare',
                 'Säkringar går ofta eller skåpet känns varmt',
-                'Du planerar laddbox, värmepump, bastu eller solceller',
+                'Du planerar laddbox, värmepump eller bastu',
                 'Försäkringsbolaget eller en besiktning har anmärkt',
             ],
         ],
