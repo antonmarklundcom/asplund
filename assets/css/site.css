@@ -326,7 +326,7 @@ ol.list { list-style: decimal; }
 .step p { margin: 0; font-size: .94rem; }
 
 /* ---------- deductions (home) ---------- */
-.deduct-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; list-style: none; }
+.deduct-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; list-style: none; }
 .dcard { padding: 28px; border-radius: var(--r-lg); background: var(--surface); border: 1px solid var(--line); }
 .dcard-hi { background: var(--ink); border-color: var(--ink); color: var(--on-dark); }
 .dcard-hi .dcard-t { color: #fff; }

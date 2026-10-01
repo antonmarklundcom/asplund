@@ -8,7 +8,7 @@ excluded — an electrician can't win them. One meaning group = one page or sect
 | Group (searches/mo, dedup) | Page | Main keyword | Status |
 |---|---|---|---|
 | Laddbox ~55,000 | /elbilsladdare/ (old URL kept) | elbilsladdare 9,900 | built; BRF section |
-| Solceller ~48,000 | /solceller/ (old URL kept) | solceller 12,100 | built; växelriktare section |
+| Solceller ~48,000 | — | solceller 12,100 | REMOVED 2026-10-01: Didrik does not install solar. /solceller/ and /solcellsbatteri/ 301 → /tjanster/ |
 | Eluttag ~41,000 + strömbrytare/dimmer 15,800 | /eluttag/ | eluttag 6,600 | built |
 | Luftvärmepump ~37,700 | /luftvarmepump/ (old URL kept; /luftvarmepumpar/ 301) | luftvärmepump 22,200 | built |
 | Utomhusbelysning ~32,700 (+ altan 3,040, flaggstång 2,790, pool) | /utomhusbelysning/ | utomhusbelysning 6,600 | built |
@@ -24,7 +24,7 @@ excluded — an electrician can't win them. One meaning group = one page or sect
 | Köksbelysning ~8,000 | /koksbelysning/ | bänkbelysning kök 1,900 | built |
 | Belysning 7,950 | /belysning/ (old URL kept) | belysning 4,400 | built (hub) |
 | Bastu ~7,600 | /bastu/ | bastuaggregat 4,400 | built |
-| Solcellsbatteri 6,000 | /solcellsbatteri/ | solcellsbatteri 2,900 | built |
+| Solcellsbatteri 6,000 | — | solcellsbatteri 2,900 | REMOVED (solar) |
 | Trädgårdsbelysning ~5,600 | /tradgardsbelysning/ | trädgårdsbelysning 3,600 | built |
 | Smarta hem 3,040 | /smarta-hem/ | smarta hem 1,900 | built |
 | Felsökning: jordfelsbrytare löser ut + elfel ~1,600 | /felsokning/ (old URL kept) | jordfelsbrytare löser ut 1,300 | built |
@@ -42,6 +42,6 @@ excluded — an electrician can't win them. One meaning group = one page or sect
 
 ## Next content (monthly freshness, in this order)
 1. /blogg/jordfelsbrytare-typ-b/ or "laddbox trefas" (laddbox long tail)
-2. "Lönar sig solceller 2026?" (solceller lönsamt, solceller villa kostnad)
+2. (solar guides dropped: Didrik does not install solar)
 3. "Luftvärmepump i fritidshus" (Nynäshamn skärgård angle)
 4. Project case studies from Didrik's real jobs → /projekt/

@@ -7,8 +7,6 @@ Art direction: realistic, natural-light photography of Swedish homes (Stockholm 
 | Status | Path | Alt text (use exactly) | Slot |
 |---|---|---|---|
 | exists | `/assets/img/tjanster/elbilsladdare-installation.webp` | Laddbox för elbil monterad på husvägg vid en villa | service /elbilsladdare/ (side panel + og:image), 4:3, min 1200x900 |
-| exists | `/assets/img/tjanster/solceller-villa-tak.webp` | Solpaneler monterade på taket till en villa på Södertörn | service /solceller/ (side panel + og:image), 4:3, min 1200x900 |
-| exists | `/assets/img/tjanster/solcellsbatteri-hembatteri.webp` | Hembatteri för solel monterat på vägg i ett teknikrum | service /solcellsbatteri/ (side panel + og:image), 4:3, min 1200x900 |
 | exists | `/assets/img/tjanster/luftvarmepump-installation.webp` | Utedel till luftvärmepump monterad på husvägg vid en villa | service /luftvarmepump/ (side panel + og:image), 4:3, min 1200x900 |
 | exists | `/assets/img/tjanster/varmepump-villa.webp` | Utedel till värmepump vid en villa på vintern | service /varmepump/ (side panel + og:image), 4:3, min 1200x900 |
 | exists | `/assets/img/tjanster/golvvarme-el-badrum.webp` | Elektrisk golvvärmematta utlagd på badrumsgolv före plattsättning | service /golvvarme/ (side panel + og:image), 4:3, min 1200x900 |

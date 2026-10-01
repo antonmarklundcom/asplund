@@ -58,9 +58,9 @@ page_start([
   <div class="wrap">
     <div class="sec-head sec-head-split">
       <div><p class="eyebrow">Tjänster</p><h2>Vad behöver du hjälp med?</h2></div>
-      <p>Vi är en lokal elfirma för allt inom el – från ett nytt eluttag till laddbox, solceller och en ny elcentral.</p>
+      <p>Vi är en lokal elfirma för allt inom el – från ett nytt eluttag till laddbox, luftvärmepump och en ny elcentral.</p>
     </div>
-    <?= service_cards(['elbilsladdare', 'solceller', 'luftvarmepump', 'elcentral', 'felsokning', 'belysning', 'utomhusbelysning', 'badrum'], 'cards-4') ?>
+    <?= service_cards(['elbilsladdare', 'luftvarmepump', 'elcentral', 'felsokning', 'belysning', 'utomhusbelysning', 'badrum', 'eluttag'], 'cards-4') ?>
     <div class="groups">
 <?php foreach (service_groups() as $gid => $glabel): ?>
       <div class="group">
@@ -102,8 +102,7 @@ page_start([
     <div class="sec-head"><p class="eyebrow">Avdrag 2026</p><h2>Du betalar bara din del – vi sköter avdraget</h2></div>
     <ul class="deduct-cards">
       <li class="dcard"><span class="dcard-pct"><?= (int) $d['rot']['percent'] ?>&nbsp;%</span><p class="dcard-t">ROT-avdrag</p><p>På arbetskostnaden för elarbeten i hemmet – elcentral, belysning, värmepump, uttag och mycket mer.</p><a class="link-arrow" href="/priser/#avdrag">Så fungerar ROT <?= icon('arrow', 16) ?></a></li>
-      <li class="dcard dcard-hi"><span class="dcard-pct"><?= (int) $d['gron-laddbox']['percent'] ?>&nbsp;%</span><p class="dcard-t">Laddbox &amp; batteri</p><p>Grönt avdrag på både arbete och material för laddbox och solcellsbatteri.</p><a class="link-arrow" href="/elbilsladdare/">Laddbox <?= icon('arrow', 16) ?></a></li>
-      <li class="dcard"><span class="dcard-pct"><?= (int) $d['gron-sol']['percent'] ?>&nbsp;%</span><p class="dcard-t">Solceller</p><p>Grönt avdrag på arbete och material när du installerar solceller på ditt hus.</p><a class="link-arrow" href="/solceller/">Solceller <?= icon('arrow', 16) ?></a></li>
+      <li class="dcard dcard-hi"><span class="dcard-pct"><?= (int) $d['gron-laddbox']['percent'] ?>&nbsp;%</span><p class="dcard-t">Laddbox</p><p>Grönt avdrag på både arbete och material när du installerar laddbox för elbilen.</p><a class="link-arrow" href="/elbilsladdare/">Laddbox <?= icon('arrow', 16) ?></a></li>
     </ul>
     <p class="fine">Max 50 000 kr per person och år för respektive avdrag. Regler enligt Skatteverket 2026.</p>
   </div>

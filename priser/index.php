@@ -9,7 +9,7 @@ $d = content('deductions');
 $faq = [
     ['q' => 'Vad kostar en elektriker i timmen?', 'a' => 'Timpriset varierar mellan elfirmor och beror bland annat på restid och typ av jobb. Vi talar alltid om vårt timpris innan vi börjar vid löpande räkning, och med ROT-avdrag betalar du 70 % av arbetskostnaden.'],
     ['q' => 'Tar ni betalt för offerten?', 'a' => 'Nej, offerten är kostnadsfri och utan förpliktelser.'],
-    ['q' => 'Ingår material i ROT-avdraget?', 'a' => 'Nej, ROT gäller bara arbetskostnaden. För laddbox, solceller och batteri gäller i stället grönt avdrag, som omfattar både arbete och material.'],
+    ['q' => 'Ingår material i ROT-avdraget?', 'a' => 'Nej, ROT gäller bara arbetskostnaden. För laddbox gäller i stället grönt avdrag, som omfattar både arbete och material.'],
     ['q' => 'Kan jag få ROT-avdrag i en bostadsrätt?', 'a' => 'Ja, för arbete inne i din lägenhet som du själv bekostar. Arbete på föreningens gemensamma delar ger inte ROT till dig som medlem.'],
     ['q' => 'Vad krävs för att ni ska kunna dra av ROT på fakturan?', 'a' => 'Ditt personnummer och fastighetsbeteckning eller bostadsrättsföreningens organisationsnummer och lägenhetsnummer. Du behöver också ha betalat tillräckligt med skatt under året.'],
 ];
@@ -56,8 +56,6 @@ page_start([
           <tbody>
             <tr><td>Elarbete i hemmet: elcentral, belysning, uttag, värmepump, golvvärme m.m.</td><td><b><?= (int) $d['rot']['percent'] ?> %</b> ROT</td><td>Arbetskostnaden</td></tr>
             <tr><td><a href="/elbilsladdare/">Laddbox för elbil</a></td><td><b><?= (int) $d['gron-laddbox']['percent'] ?> %</b> grönt</td><td>Arbete och material</td></tr>
-            <tr><td><a href="/solcellsbatteri/">Batteri för egen solel</a></td><td><b><?= (int) $d['gron-batteri']['percent'] ?> %</b> grönt</td><td>Arbete och material</td></tr>
-            <tr><td><a href="/solceller/">Solceller</a></td><td><b><?= (int) $d['gron-sol']['percent'] ?> %</b> grönt</td><td>Arbete och material</td></tr>
           </tbody>
         </table>
       </div>
