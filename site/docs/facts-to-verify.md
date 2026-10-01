@@ -18,7 +18,7 @@ Unconfirmed values are `null` and their component hides.
 | Luft-vatten / berg / frånluft | Ja luft-vatten värmepumpar | /varmepump/ keeps luft-vatten; bergvärme/frånluft/pool not confirmed |
 | Områden | "Allt söder om stan" | area pages Haninge/Tyresö/Huddinge/Södertälje/Stockholm (södra) confirmed. **Nacka not explicitly confirmed** |
 | Elbesiktning | "Genomgång av elanläggningar, konsultation" | page reworded: genomgång + råd. No written protocol/revision claim |
-| Instagram / Facebook | Instagram asplundeltjanst; Facebook "Asplund eltjänst" | Instagram link matches. **Facebook URL needed** (not guessed) |
+| Instagram / Facebook | Instagram asplundeltjanst; Facebook "Asplund eltjänst" | both linked (Facebook URL from Anton, tracking part removed) |
 
 ## Still open
 
@@ -31,7 +31,8 @@ Unconfirmed values are `null` and their component hides.
 | 5 | Köldmedie-certifiering (luft-luft) | /luftvarmepump/ | Own or partner? Not claimed today |
 | 6 | Bergvärme / frånluft / poolvärmepump el-installation | /varmepump/ | Confirm or trim |
 | 7 | Svarstid på förfrågan | /tack/ | Confirm real promise |
-| 8 | Facebook URL | footer, schema sameAs | Get link |
+| 8 | Google review link + Google Business Profile URL | /omdome/ button, footer, schema | Anton: GBP → "Få fler omdömen" → copy link into `googleReviewUrl` / `googleProfileUrl` |
+| 8b | GBP says "Open 24 hours"; site says Mån–fre 07–16. GBP name "Asplund Eltjänst AB" vs legal "Asplund Eltjänst i Nynäshamn AB" | Google Business Profile | Make GBP hours/name match the site (NAP) |
 | 9 | Öppettider veckodagar | everywhere | Confirm mån–fre |
 
 Missing (component hidden until filled in `content/site.php`):
@@ -42,3 +43,6 @@ Didrik, Facebook.
 Tax rules (content/deductions.php) were checked 2026-10-01: ROT 30 % of labour;
 grön teknik 50 % laddbox + batteri, 15 % solceller; max 50 000 kr/person/år.
 Re-check every January.
+
+Given by Anton 2026-10-01: legal name Asplund Eltjänst i Nynäshamn AB, org.nr 559284-3410 (now in footer/om-oss).
+Google rating seen in search: 5.0 from 1 Google review (no text available, so no review is shown on the site and no rating badge or aggregateRating markup until there are more).

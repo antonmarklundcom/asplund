@@ -150,7 +150,13 @@ $res = fetch($base . '/enviar.php', ['phone' => '12']);
 if ($res['code'] !== 422) { $bad("invalid phone → {$res['code']} (want 422)"); }
 $res = fetch($base . '/enviar.php', ['name' => 'VERIFY TEST', 'phone' => '070-000 00 00', 'service' => 'elbilsladdare', 'message' => 'verify.php test', 'page' => '/elbilsladdare/']);
 if ($res['code'] !== 303 || $res['location'] !== '/tack/?s=elbilsladdare') { $bad("valid lead → {$res['code']} {$res['location']}"); }
-echo "  ok    honeypot, validation and submit\n";
+$res = fetch($base . '/feedback.php', ['website' => 'spam', 'message' => 'hej']);
+if ($res['code'] !== 303 || $res['location'] !== '/omdome/?tack=1') { $bad("feedback honeypot → {$res['code']} {$res['location']}"); }
+$res = fetch($base . '/feedback.php', ['message' => '']);
+if ($res['code'] !== 422) { $bad("empty feedback → {$res['code']} (want 422)"); }
+$res = fetch($base . '/feedback.php', ['name' => 'VERIFY TEST', 'message' => 'verify.php feedback test']);
+if ($res['code'] !== 303 || $res['location'] !== '/omdome/?tack=1') { $bad("valid feedback → {$res['code']} {$res['location']}"); }
+echo "  ok    honeypot, validation and submit (lead + feedback)\n";
 
 echo $fail === 0 ? "\nPASS\n" : "\nFAIL ({$fail})\n";
 exit($fail === 0 ? 0 : 1);

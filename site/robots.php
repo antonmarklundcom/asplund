@@ -16,4 +16,4 @@ if (!indexing_allowed()) {
     return;
 }
 
-echo "User-agent: *\nDisallow: /enviar.php\nDisallow: /tack/\n\nSitemap: " . abs_url('/sitemap.xml') . "\n";
+echo "User-agent: *\nDisallow: /enviar.php\nDisallow: /feedback.php\nDisallow: /tack/\nDisallow: /omdome/\n\nSitemap: " . abs_url('/sitemap.xml') . "\n";

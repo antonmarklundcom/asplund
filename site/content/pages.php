@@ -70,6 +70,13 @@ return [
         'lead'        => 'Så hanterar vi dina personuppgifter.',
         'priority'    => '0.2',
     ],
+    '/omdome/' => [
+        'title'       => 'Lämna omdöme – Asplund Eltjänst',
+        'description' => 'Berätta hur det var att anlita Asplund Eltjänst. Skriv ett omdöme på Google eller skicka feedback direkt till Didrik.',
+        'h1'          => 'Hur var det att jobba med oss?',
+        'lead'        => 'Din åsikt hjälper andra som letar efter elektriker och gör att vi blir bättre. Tack för att du tar dig tid.',
+        'noindex'     => true,
+    ],
     '/tack/' => [
         'title'       => 'Tack för din förfrågan – Asplund Eltjänst',
         'description' => 'Tack för din förfrågan till Asplund Eltjänst. Vi återkommer så snart vi kan med pris och förslag på tid.',
