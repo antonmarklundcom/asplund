@@ -22,7 +22,7 @@ content file (content/services/energi.php). Content is data (content/*.php); tem
 render it; route files are 3 lines (php tools/make-routes.php creates missing ones).
 
 Gate before every commit: cd site && PHP=/c/php/php.exe ./verify.sh → must print PASS
-(lint, 39 routes 200, titles ≤60 unique, descriptions 110–165 unique, one h1, internal
+(lint, routes 200, spam layers, titles ≤60 unique, descriptions 110–165 unique, one h1, internal
 links, 35 redirects, 404, robots noindex, sitemap, lead form). Preview:
 C:\php\php.exe -S 127.0.0.1:8091 router.php (from site/).
 

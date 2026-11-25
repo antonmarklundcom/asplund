@@ -53,11 +53,10 @@ function lead_form(array $o = []): string
     $f  = '<form class="lead" id="' . e($id) . '" action="/enviar.php" method="post" data-lead>';
     $f .= '<div class="lead-head"><p class="lead-title">' . e($title) . '</p><p class="lead-sub">' . e($sub) . '</p></div>';
     $f .= '<input type="hidden" name="page" value="' . e($page) . '">';
-    $f .= '<input type="hidden" name="t" value="">';
     foreach (['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid', 'fbclid', 'referrer'] as $k) {
         $f .= '<input type="hidden" name="' . $k . '" value="">';
     }
-    $f .= '<div class="hp" aria-hidden="true"><label>Lämna tomt <input name="website" tabindex="-1" autocomplete="off"></label></div>';
+    $f .= form_guard_fields();
     $f .= '<div class="f-row">'
         . '<label class="f"><span>Namn</span><input name="name" autocomplete="name" maxlength="120" placeholder="Ditt namn"></label>'
         . '<label class="f"><span>Telefon <em>*</em></span><input type="tel" name="phone" required autocomplete="tel" inputmode="tel" minlength="6" maxlength="30" placeholder="070-123 45 67"></label>'
@@ -67,6 +66,7 @@ function lead_form(array $o = []): string
         . '<label class="f"><span>Ort</span><input name="place" autocomplete="address-level2" maxlength="120" placeholder="t.ex. Ösmo"></label>'
         . '</div>';
     $f .= '<label class="f"><span>Beskriv jobbet</span><textarea name="message" rows="3" maxlength="3000" placeholder="Vad behöver du hjälp med? Ungefär när?"></textarea></label>';
+    $f .= form_turnstile();
     $f .= '<button class="btn btn-primary btn-block btn-lg" type="submit">Skicka förfrågan ' . icon('arrow', 18) . '</button>';
     $f .= '<ul class="lead-ticks"><li>' . icon('check', 16) . 'Kostnadsfritt</li><li>' . icon('check', 16) . 'Inga förpliktelser</li><li>' . icon('check', 16) . 'ROT direkt på fakturan</li></ul>';
     $f .= '<p class="lead-alt">Hellre bild direkt? SMS:a en bild på jobbet till <a href="' . e(sms_href()) . '" data-ev="sms_click">' . e(site('phone')) . '</a>.</p>';

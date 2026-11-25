@@ -21,10 +21,13 @@ $ok   = 0;
 $bad  = static function (string $msg) use (&$fail): void { $fail++; echo "  FAIL  {$msg}\n"; };
 $good = static function () use (&$ok): void { $ok++; };
 
-function fetch(string $url, array $post = null): array
+function fetch(string $url, array $post = null, array $headers = []): array
 {
     $ch = curl_init($url);
     curl_setopt_array($ch, [CURLOPT_RETURNTRANSFER => true, CURLOPT_FOLLOWLOCATION => false, CURLOPT_HEADER => true, CURLOPT_TIMEOUT => 20]);
+    if ($headers) {
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+    }
     if ($post !== null) {
         curl_setopt($ch, CURLOPT_POST, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($post));
@@ -142,21 +145,75 @@ foreach (all_routes() as $path => $r) {
 }
 echo "  ok    robots.txt and sitemap.xml\n";
 
-/* ---- lead form ---- */
+/* ---- lead form + spam protection (lib/antispam.php) ---- */
 echo "== lead form\n";
-$res = fetch($base . '/enviar.php', ['website' => 'spam', 'phone' => '0701234567']);
-if ($res['code'] !== 303 || !str_starts_with((string) $res['location'], '/tack/')) { $bad("honeypot → {$res['code']} {$res['location']}"); }
-$res = fetch($base . '/enviar.php', ['phone' => '12']);
+$logs      = ROOT . '/logs';
+$resetRate = static function () use ($logs): void { foreach (glob($logs . '/rate/*.json') ?: [] as $f) { @unlink($f); } };
+$lines     = static fn (string $prefix): int => array_sum(array_map(static fn ($f) => count(file($f)), glob($logs . '/' . $prefix . '-*.jsonl') ?: []));
+$ft        = form_token(time() - 30);                       // a form rendered 30 s ago
+$lead      = static fn (array $over = []) => $over + ['ft' => $ft, 'name' => 'VERIFY TEST', 'phone' => '070-000 00 00', 'service' => 'elbilsladdare', 'message' => 'verify.php test', 'page' => '/elbilsladdare/'];
+$resetRate();
+
+if (!str_contains(fetch($base . '/boka/')['body'], 'name="ft" value="')) { $bad('/boka/ form has no ft token'); }
+if (!str_contains(fetch($base . '/omdome/')['body'], 'name="ft" value="')) { $bad('/omdome/ form has no ft token'); }
+
+$res = fetch($base . '/enviar.php', ['phone' => '12', 'ft' => $ft]);
 if ($res['code'] !== 422) { $bad("invalid phone → {$res['code']} (want 422)"); }
-$res = fetch($base . '/enviar.php', ['name' => 'VERIFY TEST', 'phone' => '070-000 00 00', 'service' => 'elbilsladdare', 'message' => 'verify.php test', 'page' => '/elbilsladdare/']);
+
+// Every one of these must look like success to the sender and store no lead.
+$spam = [
+    'honeypot'        => $lead(['website' => 'spam']),
+    'no token'        => array_diff_key($lead(), ['ft' => 1]),
+    'forged token'    => $lead(['ft' => base_convert((string) (time() - 30), 10, 36) . '.' . str_repeat('0', 32)]),
+    'too fast'        => $lead(['ft' => form_token()]),
+    'two links'       => $lead(['message' => 'Buy now http://a.example/x and https://b.example/y']),
+    'link in name'    => $lead(['name' => 'www.casino.example']),
+    'bbcode'          => $lead(['message' => 'hello [url=http://a.example]x[/url]']),
+    'non-latin'       => $lead(['message' => 'Здравствуйте, предлагаем продвижение сайта в поисковых системах']),
+];
+$before = [$lines('leads'), $lines('spam')];
+foreach ($spam as $name => $post) {
+    $res = fetch($base . '/enviar.php', $post);
+    if ($res['code'] !== 303 || !str_starts_with((string) $res['location'], '/tack/')) { $bad("spam ({$name}) → {$res['code']} {$res['location']} (want 303 /tack/)"); }
+}
+if ($lines('leads') !== $before[0]) { $bad('a spam post was stored as a lead'); }
+if ($lines('spam') !== $before[1] + count($spam)) { $bad('spam posts logged: ' . ($lines('spam') - $before[1]) . ' of ' . count($spam)); }
+
+$res = fetch($base . '/enviar.php', $lead(), ['Origin: https://evil.example']);
+if ($res['code'] !== 303 || $lines('leads') !== $before[0]) { $bad('cross-origin post was accepted'); }
+
+// A real lead, with one link and Swedish letters, is stored once; a double-click is not stored twice.
+$real = $lead(['message' => 'Hej! Vill ha laddbox på garaget i Ösmo, den här: https://example.com/laddbox']);
+$res  = fetch($base . '/enviar.php', $real);
 if ($res['code'] !== 303 || $res['location'] !== '/tack/?s=elbilsladdare') { $bad("valid lead → {$res['code']} {$res['location']}"); }
-$res = fetch($base . '/feedback.php', ['website' => 'spam', 'message' => 'hej']);
+if ($lines('leads') !== $before[0] + 1) { $bad('valid lead was not stored'); }
+$res = fetch($base . '/enviar.php', $real);
+if ($res['code'] !== 303 || $lines('leads') !== $before[0] + 1) { $bad('duplicate lead was stored twice'); }
+
+// Rate limit: SPAM_RATE_HOUR accepted posts per hour, then a 429 page with the phone number.
+for ($i = 2; $i <= SPAM_RATE_HOUR; $i++) {
+    $res = fetch($base . '/enviar.php', $lead(['message' => 'verify.php rate ' . $i]));
+    if ($res['code'] !== 303) { $bad("lead {$i} within the limit → {$res['code']}"); }
+}
+$res = fetch($base . '/enviar.php', $lead(['message' => 'verify.php over the limit']));
+if ($res['code'] !== 429 || !str_contains($res['body'], site('phone'))) { $bad("over the rate limit → {$res['code']} (want 429 with phone number)"); }
+if ($lines('leads') !== $before[0] + SPAM_RATE_HOUR) { $bad('rate-limited post was stored'); }
+$resetRate();
+
+$fb  = $lines('feedback');
+$res = fetch($base . '/feedback.php', ['website' => 'spam', 'message' => 'hej', 'ft' => $ft]);
 if ($res['code'] !== 303 || $res['location'] !== '/omdome/?tack=1') { $bad("feedback honeypot → {$res['code']} {$res['location']}"); }
-$res = fetch($base . '/feedback.php', ['message' => '']);
+$res = fetch($base . '/feedback.php', ['message' => '', 'ft' => $ft]);
 if ($res['code'] !== 422) { $bad("empty feedback → {$res['code']} (want 422)"); }
-$res = fetch($base . '/feedback.php', ['name' => 'VERIFY TEST', 'message' => 'verify.php feedback test']);
-if ($res['code'] !== 303 || $res['location'] !== '/omdome/?tack=1') { $bad("valid feedback → {$res['code']} {$res['location']}"); }
-echo "  ok    honeypot, validation and submit (lead + feedback)\n";
+$res = fetch($base . '/feedback.php', ['name' => 'VERIFY TEST', 'message' => 'verify.php feedback without token']);
+if ($res['code'] !== 303 || $lines('feedback') !== $fb) { $bad('feedback without token was stored'); }
+$res = fetch($base . '/feedback.php', ['name' => 'VERIFY TEST', 'message' => 'verify.php feedback test', 'ft' => $ft]);
+if ($res['code'] !== 303 || $res['location'] !== '/omdome/?tack=1' || $lines('feedback') !== $fb + 1) { $bad("valid feedback → {$res['code']} {$res['location']}"); }
+$resetRate();
+
+// Turnstile is off without keys: no widget, no third-party script.
+if (!cfg('TURNSTILE_SITE_KEY') && str_contains(fetch($base . '/boka/')['body'], 'challenges.cloudflare.com')) { $bad('Turnstile script loaded without keys'); }
+echo "  ok    spam layers (8 kinds, origin, duplicate, rate limit), validation and submit (lead + feedback)\n";
 
 echo $fail === 0 ? "\nPASS\n" : "\nFAIL ({$fail})\n";
 exit($fail === 0 ? 0 : 1);
