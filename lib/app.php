@@ -437,5 +437,6 @@ function sv_date(string $iso): string
     return (int) date('j', $t) . ' ' . $months[(int) date('n', $t) - 1] . ' ' . date('Y', $t);
 }
 
+require ROOT . '/lib/antispam.php';
 require ROOT . '/lib/components.php';
 require ROOT . '/lib/layout.php';

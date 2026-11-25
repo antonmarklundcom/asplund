@@ -186,6 +186,7 @@ ul, ol { margin: 0; padding: 0; }
 .lead-head { margin-bottom: 18px; }
 .lead-title { margin: 0 0 4px; font: 750 1.4rem/1.2 var(--font-display); color: var(--text); letter-spacing: -.02em; }
 .lead-sub { margin: 0; font-size: .95rem; color: var(--muted); }
+.cf-turnstile { margin: 0 0 .9rem; min-height: 65px; }
 .hp { position: absolute !important; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
 .f-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .f { display: block; margin-bottom: 12px; }

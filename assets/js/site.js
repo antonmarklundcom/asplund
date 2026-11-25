@@ -81,7 +81,6 @@
   }
 
   /* ---- lead forms ---- */
-  var loaded = Date.now();
   d.querySelectorAll('form[data-lead]').forEach(function (form) {
     var set = function (name, val) { var el = form.elements[name]; if (el && val) el.value = val; };
     if (attr) {
@@ -94,7 +93,6 @@
       if (!started) { started = true; track('form_start'); }
     });
     form.addEventListener('submit', function () {
-      set('t', String(loaded));
       var btn = form.querySelector('button[type=submit]');
       if (btn) { btn.disabled = true; btn.classList.add('is-loading'); }
       track('form_submit');

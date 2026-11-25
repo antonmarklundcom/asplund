@@ -18,6 +18,15 @@ return [
     'VENDERCRM_URL'    => '',          // e.g. https://crm.example.com
     'VENDERCRM_API_KEY' => '',         // site key from VenderCRM → Sitios
 
+    // Spam protection (lib/antispam.php). Honeypot, signed time token, content rules,
+    // rate limit and duplicate check are always on and need no setting.
+    // Optional extra layer: Cloudflare Turnstile (free; dash.cloudflare.com → Turnstile →
+    // add the domain → copy both keys). Shown on the forms only when BOTH are set.
+    'TURNSTILE_SITE_KEY' => '',
+    'TURNSTILE_SECRET'   => '',
+    // Optional: fixed key for the form token. Empty = created once in logs/.form-secret.
+    'FORM_SECRET'        => '',
+
     // Analytics (optional). Loaded only after the visitor accepts statistics cookies.
     'GA4_ID'           => '',          // G-XXXXXXX
     'ADS_SEND_TO'      => '',          // AW-XXXXXXX/abcDEF — lead conversion on /tack/

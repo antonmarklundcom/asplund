@@ -102,6 +102,7 @@ function page_end(): void
   <div class="consent-btns"><button type="button" class="btn btn-ghost btn-sm" data-consent="deny">Endast nödvändiga</button><button type="button" class="btn btn-primary btn-sm" data-consent="grant">Godkänn statistik</button></div>
 </aside>
 <?php endif; ?>
+<?= turnstile_script() ?>
 <script src="<?= e(asset('/assets/js/site.js')) ?>" defer></script>
 </body>
 </html>
