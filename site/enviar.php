@@ -2,9 +2,10 @@
 /**
  * Lead handler. POST from every lead form (lib/components.php lead_form()).
  *
- * 1. Spam: honeypot field "website" filled, or submitted < 2.5 s after the
- *    page loaded (field "t", set by JS) → pretend success, store nothing.
- * 2. Validate: phone (≥ 6 digits) is the only required field.
+ * 1. Spam: lib/antispam.php (honeypot, origin, signed time token, content rules,
+ *    optional Turnstile, per-IP rate limit, duplicates). Caught posts get the
+ *    thank-you page, are kept in logs/spam-YYYY-MM.jsonl and are sent nowhere.
+ * 2. Validate: phone (7–15 digits) is the only required field.
  * 3. Always append to logs/leads-YYYY-MM.jsonl (the fallback that never fails).
  * 4. E-mail LEAD_EMAIL when configured.
  * 5. POST to VenderCRM when VENDERCRM_URL + VENDERCRM_API_KEY are set —
@@ -31,9 +32,9 @@ $field = static function (string $key, int $max = 500): string {
 $service = $field('service', 60);
 $thanks  = '/tack/' . (service($service) ? '?s=' . rawurlencode($service) : '');
 
-/* 1. spam */
-$t = (int) $field('t', 20);
-if ($field('website') !== '' || ($t > 0 && (int) (microtime(true) * 1000) - $t < 2500)) {
+/* 1. honeypot first: a bot gets "success" whatever else it sent */
+if ($field('website') !== '') {
+    spam_log('lead', 'honeypot', ['phone' => $field('phone', 30), 'message' => $field('message', 3000)]);
     header('Location: ' . $thanks, true, 303);
     exit;
 }
@@ -41,13 +42,28 @@ if ($field('website') !== '' || ($t > 0 && (int) (microtime(true) * 1000) - $t <
 /* 2. validate */
 $phone  = $field('phone', 30);
 $digits = preg_replace('/\D+/', '', $phone) ?? '';
-if (strlen($digits) < 6) {
+if (strlen($digits) < 7 || strlen($digits) > 15) {
     http_response_code(422);
     page_start(['title' => 'Telefonnummer saknas – Asplund Eltjänst', 'description' => 'Ange ett telefonnummer så att vi kan nå dig.', 'path' => '/boka/', 'noindex' => true]);
     echo '<section class="thanks"><div class="wrap wrap-narrow"><h1>Vi behöver ditt telefonnummer</h1>'
        . '<p class="thanks-lead">Ange ett telefonnummer så att vi kan ringa upp dig om jobbet.</p>'
        . '<p><a class="btn btn-primary" href="javascript:history.back()">Gå tillbaka till formuläret</a></p></div></section>';
     page_end();
+    exit;
+}
+
+/* 1b. the remaining spam layers (lib/antispam.php) */
+$check = spam_check(['message' => $field('message', 3000), 'short' => ['name' => $field('name', 120), 'place' => $field('place', 120), 'phone' => $phone]]);
+if ($check['verdict'] === 'rate' || $check['verdict'] === 'challenge') {
+    spam_log('lead', $check['reason'], ['name' => $field('name', 120), 'phone' => $phone, 'place' => $field('place', 120), 'message' => $field('message', 3000), 'page' => $field('page', 300)]);
+    spam_page($check['verdict'] === 'rate' ? 429 : 422, '/boka/');
+    exit;
+}
+if ($check['verdict'] !== 'ok') {
+    if ($check['verdict'] === 'spam') {
+        spam_log('lead', $check['reason'], ['name' => $field('name', 120), 'phone' => $phone, 'place' => $field('place', 120), 'message' => $field('message', 3000), 'page' => $field('page', 300)]);
+    }
+    header('Location: ' . $thanks, true, 303);
     exit;
 }
 

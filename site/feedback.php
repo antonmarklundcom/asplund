@@ -3,7 +3,7 @@
  * Customer feedback handler (POST from /omdome/). Private note to the owner.
  * It is NOT a review filter: /omdome/ shows the Google review link to everyone.
  *
- * Spam (honeypot / < 2.5 s) → pretend success. Message required.
+ * Spam: lib/antispam.php, same layers as the lead form. Message required.
  * Appends to logs/feedback-YYYY-MM.jsonl, e-mails LEAD_EMAIL when set,
  * then 303 to /omdome/?tack=1.
  */
@@ -25,8 +25,8 @@ $field = static function (string $key, int $max = 500): string {
 };
 
 $thanks = '/omdome/?tack=1';
-$t      = (int) $field('t', 20);
-if ($field('website') !== '' || ($t > 0 && (int) (microtime(true) * 1000) - $t < 2500)) {
+if ($field('website') !== '') {
+    spam_log('feedback', 'honeypot', ['message' => $field('message', 3000)]);
     header('Location: ' . $thanks, true, 303);
     exit;
 }
@@ -39,6 +39,20 @@ if (mb_strlen($message) < 3) {
        . '<p class="thanks-lead">Feedbacken var tom. Gå tillbaka och skriv några rader.</p>'
        . '<p><a class="btn btn-primary" href="javascript:history.back()">Tillbaka</a></p></div></section>';
     page_end();
+    exit;
+}
+
+$check = spam_check(['message' => $message, 'short' => ['name' => $field('name', 120)]]);
+if ($check['verdict'] === 'rate' || $check['verdict'] === 'challenge') {
+    spam_log('feedback', $check['reason'], ['name' => $field('name', 120), 'contact' => $field('contact', 120), 'message' => $message]);
+    spam_page($check['verdict'] === 'rate' ? 429 : 422, '/omdome/');
+    exit;
+}
+if ($check['verdict'] !== 'ok') {
+    if ($check['verdict'] === 'spam') {
+        spam_log('feedback', $check['reason'], ['name' => $field('name', 120), 'contact' => $field('contact', 120), 'message' => $message]);
+    }
+    header('Location: ' . $thanks, true, 303);
     exit;
 }
 

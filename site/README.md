@@ -17,6 +17,13 @@ php tools/make-zip.php               # dist/asplundeltjanst-<date>.zip for publi
   header with mega menu, footer, mobile call bar), `lib/components.php` (lead form, FAQ,
   cards …), `templates/` (service, area, guide), `enviar.php` (lead handler: log → e-mail →
   VenderCRM), `route.php` (redirects, slash fix, 404).
+- **Spam protection:** `lib/antispam.php`, used by `enviar.php` and `feedback.php`. Always on, no
+  setup: honeypot, same-origin check, signed time token (`ft`, works without JavaScript, min 3 s),
+  content rules (links, markup, non-Latin text), 5 posts/hour and 15/day per IP, duplicate check.
+  Caught posts get the thank-you page and are kept in `logs/spam-YYYY-MM.jsonl` with the reason
+  (read it now and then for false positives); nothing is e-mailed for them. Optional extra layer:
+  Cloudflare Turnstile, shown only when `TURNSTILE_SITE_KEY` and `TURNSTILE_SECRET` are set in
+  `config.php`.
 - **Indexing is OFF by default** (noindex + robots Disallow). Set `ALLOW_INDEXING => '1'`
   in the server's `config.php` only on the real domain at go-live.
 - Docs: `docs/seo-keyword-map.md`, `docs/facts-to-verify.md`, `docs/image-slots.md`.

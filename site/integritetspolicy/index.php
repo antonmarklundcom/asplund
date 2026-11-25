@@ -16,6 +16,8 @@ page_start(['title' => $p['title'], 'description' => $p['description'], 'path' =
         ]],
         ['h2' => 'Vilka uppgifter vi samlar in', 'p' => [
             'När du skickar en förfrågan via formuläret, ringer, SMS:ar eller mejlar oss sparar vi de uppgifter du lämnar: namn, telefonnummer, ort eller adress, vad ärendet gäller och eventuella bilder. Formuläret sparar också vilken sida du skickade det från och, om du kom via en annons, kampanjparametrar.',
+            'För att stoppa skräppost kontrolleras formuläret automatiskt. Vi sparar då en krypterad kontrollsumma av din IP-adress i högst två dygn för att kunna begränsa antalet inskick, och meddelanden som bedöms som skräppost sparas i en separat logg i högst 12 månader.'
+                . (cfg('TURNSTILE_SITE_KEY') && cfg('TURNSTILE_SECRET') ? ' Formuläret använder också Cloudflare Turnstile, som kontrollerar att besökaren är en människa utan spårningscookies.' : ''),
             'När du blir kund behöver vi dessutom de uppgifter som krävs för att utföra jobbet, fakturera och – om du vill ha ROT eller grönt avdrag – ansöka hos Skatteverket, till exempel personnummer och fastighetsbeteckning.',
         ]],
         ['h2' => 'Varför vi behandlar uppgifterna', 'list' => [
